@@ -1,0 +1,63 @@
+﻿
+
+@model Outsourcing.Data.Models.Blog
+@{
+    ViewBag.Title = "Bảng quy đổi size |RISES.VN";
+    ViewBag.Description = "Chương trình mua hàng cho rises |RISES.VN";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!-- Page Banner Start -->
+<!-- Page Banner Start -->
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.Rise_TableSize)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href="/">@Html.Raw(Resources.Home_Rise)</a></li>
+
+                    <li><span>@Model.Title</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area Start -->
+<div class="blog-details-page page-left-sidebar page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="sin-blog-post">
+                    <div class="post-info-wrapper fix">
+                        <div class="row">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-6 postsummary">
+                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                {
+                                    @Html.Raw(Model.Content)
+                                }
+                                else
+                                {
+                                    @Html.Raw(Model.ContentEng)
+                                }
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Blog Area End -->

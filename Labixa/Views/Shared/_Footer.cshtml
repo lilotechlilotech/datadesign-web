@@ -1,0 +1,109 @@
+﻿@{
+    var dat = (IEnumerable<Outsourcing.Data.Models.WebsiteAttribute>)ViewBag.social;
+    //HttpCookie cookie;
+    //try
+    //{
+
+    //    cookie = new HttpCookie("_culture");
+    //    cookie.Value = "vi";
+    //    cookie.Expires = DateTime.Now.AddYears(1);
+    //}
+    //catch (Exception e)
+    //{
+    //    cookie = Request.Cookies["_culture"];
+    //}
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!--start footer-->
+<footer id="footer">
+    <div class="subscribe-social">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="footer-subscribe">
+                        <form action="#" method="post" style="display:none">
+                            <div class="input-box">
+                                <input type="text" placeholder="Your Email" name="email">
+                            </div>
+                            <div class="actions">
+                                <input type="submit" value="Subscribe" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="social-footer">
+                        <ul class="link-follow">
+                            @if (dat != null)
+                            {
+                                <li><a target="_blank" class="facebook fa fa-facebook" href="@dat.Where(p=>p.Description.ToLower().Equals("facebook")).FirstOrDefault().Value"></a></li>
+                                <li><a target="_blank" class="linkedin fa fa-instagram" href="@dat.Where(p=>p.Description.ToLower().Equals("instagram")).FirstOrDefault().Value"></a></li>
+                                <li><a target="_blank" class="youtube fa fa-youtube" href="@dat.Where(p=>p.Description.ToLower().Equals("youtube")).FirstOrDefault().Value"></a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe Area End -->
+    <!-- Footer Top Area Start -->
+    <div class="footer-top padding-70 fix">
+        <div class="container">
+            <div class="row">
+                <div class="footer-column col-sm-6 col-md-4 col-xs-12">
+                    <a href="/" class="logo-footer"><img src="~/Content/Final-Rises-w.png"></a>
+                    <div class="footer-content">
+                        <p>
+                            @Html.Raw(Resources.Rise_Footer_Description)
+                        </p>
+                        <!-- <a href="#">Continus Reading &gt;&gt;</a> -->
+                    </div>
+                </div>
+                <div class="footer-column col-sm-6 col-md-4 col-xs-12">
+                    <div class="footer-title">
+                        <h3>@Html.Raw(Resources.Rise_AbouUs)</h3>
+                    </div>
+                    <div class="footer-content">
+                        <ul>
+                            <li><a href="/chinh-sach-mua-hang">@Html.Raw(Resources.Rise_PurchasePolicy)</a></li>
+                            <li><a href="/chinh-sach-doi-tra">@Html.Raw(Resources.Rise_ReturnPolicy)</a></li>
+                            <li><a href="/bang-size">@Html.Raw(Resources.Rise_TableSize)</a></li>
+                        </ul>
+                    </div>
+                </div>          
+                <div class="footer-column col-sm-6 col-md-4 col-xs-12">
+                    <div class="footer-title">
+                        <h3>@Html.Raw(Resources.CONTACTS)</h3>
+                    </div>
+                    <div class="footer-content">
+                        <div class="footer-contact">
+                            <p class="adress"><i class="fa fa-map-marker"></i><span>@Html.Raw(Resources.Rise_Address):</span>@Html.Raw(Resources.Rise_AddressDetail)</p>
+                            <p class="email"><i class="fa fa-envelope"></i><span>Email:</span> phuongly@rises.vn</p>
+                            <p class="phone"><i class="fa fa-phone"></i><span>@Html.Raw(Resources.Rise_PhoneNumber): +84 090 66 44 030</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Top Area End -->
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <!-- Footer Copyright -->
+                    <div class="copy-right">
+                        <p>&copy; 2019 <a href="http://rises.vn">RISES.VN</a>, All Right Reserved | Created by <a target="_blank" href="http://lilotech.com">LILOTECH</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- Footer Bottom End -->
+
+</footer>
+<!--end footer-->
+<!--start container-->
+<!--end container-->
