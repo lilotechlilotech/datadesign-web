@@ -1,0 +1,55 @@
+﻿
+
+@model Outsourcing.Data.Models.Blog
+@{
+    HttpCookie cookie = Request.Cookies["_culture"];
+    ViewBag.Title = "Chính sách đổi trả |RISES.VN";
+    ViewBag.Description = "Chương trình đổi trả cho rises |RISES.VN";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+}
+<!-- Page Banner Start -->
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.Rise_ReturnPolicy)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href="/">@Html.Raw(Resources.Home_Rise)</a></li>
+                    <li><span>@Html.Raw(Resources.Rise_ReturnPolicy)</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area Start -->
+<div class="blog-details-page page-left-sidebar page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="sin-blog-post">
+                    <div class="post-info-wrapper fix">
+                        <div class="postsummary">
+                            @if (cookie == null || cookie.Value.Equals("vi"))
+                            {
+                                @Html.Raw(Model.Content)
+                            }
+                            else
+                            {
+                                @Html.Raw(Model.ContentEng)
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Blog Area End -->

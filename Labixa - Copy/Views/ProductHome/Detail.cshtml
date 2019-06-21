@@ -1,0 +1,279 @@
+﻿@model Outsourcing.Data.Models.Product
+
+@{
+    ViewBag.Title = "Thời trang nữ cao cấp |RISES.VN";
+    ViewBag.Description = "Chúng tôi tin tưởng trong việc cung cấp dịch vụ khách hàng tuyệt vời và chúng " +
+         "tôi được đáp ứng các khách hàng của chúng tôi. Nếu bạn có bất kỳ câu hỏi, ý kiến hoặc đề nghị,vui lòng liên hệ với chúng tôi! " +
+     "Chúng tôi rất mong nhận được hồi âm từ bạn.";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    HttpCookie cookie = Request.Cookies["_culture"];
+    if (Model != null)
+    {
+        ViewBag.Image = "http://www.rises.vn" + Model.ProductPictureMappings.FirstOrDefault().Picture.Url;
+    }
+}
+<!-- Page Banner Start -->
+<input value="@cookie.Value" id="language" hidden />
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                @if (cookie == null || cookie.Value.Equals("vi"))
+                {
+                    <h1>Chi Tiết Sản Phẩm</h1>
+                }
+                else
+                {
+                    <h1>Product Detail</h1>
+
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="http://rises.vn/san-pham/@Model.ProductCategory.Slug"><span itemprop="name">@Html.Raw(Resources.Product_Rise)</span></a></li>
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="http://rises.vn/san-pham-chi-tiet/@Model.Slug">
+
+                            @if (cookie == null || cookie.Value.Equals("vi"))
+                            {
+                                <span itemprop="name">@Model.Name</span>
+                            }
+                            else
+                            {
+                                <span itemprop="name">@Model.NameEng</span>
+                            }
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Page Start -->
+<div class="single-product-page page margin-top-70 fix">
+    <div class="container">
+        <div class="row" itemscope itemtype="http://schema.org/Product">
+            <div class="single-product-wrapper margin-bottom-70 fix">
+                <div class="col-md-6 col-xs-12">
+                    <div class="product-image">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="view-1">
+                                <div class="simpleLens-big-image-container">
+                                    <a class="simpleLens-lens-image" data-lens-image="@Model.ProductPictureMappings.FirstOrDefault().Picture.Url">
+                                        <img itemprop="image" src="@Model.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="" class="simpleLens-big-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="view-2">
+                                <div class="simpleLens-big-image-container">
+                                    <a class="simpleLens-lens-image" data-lens-image="@Model.ProductPictureMappings.Skip(1).FirstOrDefault().Picture.Url">
+                                        <img itemprop="image" src="@Model.ProductPictureMappings.Skip(1).FirstOrDefault().Picture.Url" alt="" class="simpleLens-big-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="view-3">
+                                <div class="simpleLens-big-image-container">
+                                    <a class="simpleLens-lens-image" data-lens-image="@Model.ProductPictureMappings.Skip(2).FirstOrDefault().Picture.Url">
+                                        <img itemprop="image" src="@Model.ProductPictureMappings.Skip(2).FirstOrDefault().Picture.Url" alt="" class="simpleLens-big-image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .fixedImageSize img {
+                                width: 81px;
+                            }
+                        </style>
+                        <ul class="nav nav-tabs fixedImageSize" role="tablist">
+                            <li class="active"><a href="#view-1" data-toggle="tab"><img src="@Model.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="" /></a></li>
+                            <li><a href="#view-2" data-toggle="tab"><img src="@Model.ProductPictureMappings.Skip(1).FirstOrDefault().Picture.Url" alt="" /></a></li>
+                            <li><a href="#view-3" data-toggle="tab"><img src="@Model.ProductPictureMappings.Skip(2).FirstOrDefault().Picture.Url" alt="" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 fix">
+                    <div class="single-pro-title fix">
+                        <div class="name-price">
+                            <h2 class="single-pro-name" itemprop="name">
+
+                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                {
+                                    @Model.Name
+                                }
+                                else
+                                {
+                                    @Model.NameEng
+                                }
+
+
+
+                            </h2>
+                            <p class="single-pro-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                {
+                                    if (Model.IsHomePage == true)
+                                    {
+
+                                        <span class="new" itemprop="price">@Model.Price.ToString("#,##0") đ</span>
+
+                                        <span class="old">@Model.OldPrice.ToString("#,##0") đ</span>
+                                    }
+                                    else
+                                    {
+
+                                        <span class="new" itemprop="price">@Model.OldPrice.ToString("#,##0") đ</span>
+                                    }
+                                }
+                                else
+                                {
+
+
+                                    if (Model.IsHomePage == true)
+                                    {
+                                        <span class="new">
+                                            @{var Prices = Math.Round(((Model.Price) / 23000), 3);
+
+
+
+                                            } @Prices $
+                                        </span>
+                                        <span class="old">
+                                            @{var pricesOld = Math.Round(((Model.OldPrice) / 23000), 3);
+
+
+
+                                            } @pricesOld $
+                                        </span>
+
+                                    }
+                                    else
+                                    {
+
+                                        <span class="new">
+                                            @{var pricesOld = Math.Round(((Model.OldPrice) / 23000), 3);
+
+
+
+                                            } @pricesOld $
+                                        </span>
+                                    }
+
+                                }
+
+
+
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="pro-description fix">
+                        <h3>Mô tả</h3>
+                        <p itemprop="description">
+                            @if (cookie == null || cookie.Value.Equals("vi"))
+                            {
+                                @Html.Raw(Model.Content)
+                            }
+                            else
+                            {
+                                @Html.Raw(Model.ContentEng)
+                            }
+
+                        </p>
+                        <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                            <span itemprop="ratingValue">5.0</span> stars, based on <span itemprop="reviewCount">136 </span> reviews
+                        </span>
+
+                    </div>
+                    <div class="pro-actions fix">
+                        <div class="pro-quantity float-left">
+                            <input type="text" value="1" id="quantity" name="qtybutton" class="pro-quantity-box">
+                        </div>
+                        <button id="addtocard" class="act-btn add-cart" onclick="return addToCard()"><i class="fa fa-shopping-basket"></i> add to cart</button>
+                        <a href="#" class="act-btn favorite" style="display:none"><i class="fa fa-heart-o"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title fix">
+                    <h2>@Html.Raw(Resources.Rise_Related)</h2>
+                </div>
+                <!-- Blog Slider -->
+                <div class="propular-slider related-product owl-carousel">
+                    @Html.Action("ProductRelate", "ProductHome", new { slug = Model.ProductCategory.Slug })
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- About Page End -->
+<script src="~/Content/plugin/bootstrapmodal/js/bootstrap.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Content/plugin/jquery.themepunch.plugins.min.js"></script>
+<script>
+    function flyToElement(flyer, flyingTo) {
+        var $func = $(this);
+        var divider = 3;
+        var flyerClone = $(flyer).clone();
+        $(flyerClone).css({ width:"20%", position: 'absolute', top: $(flyer).offset().top + "px", left: $(flyer).offset().left + "px", opacity: 1, 'z-index': 1000 });
+        $('body').append($(flyerClone));
+        var gotoX = $(flyingTo).offset().left + ($(flyingTo).width() / 2) - ($(flyer).width() / divider) / 2;
+        var gotoY = $(flyingTo).offset().top + ($(flyingTo).height() / 2) - ($(flyer).height() / divider) / 2;
+
+        $(flyerClone).animate({
+            opacity: 0.4,
+            left: gotoX,
+            top: gotoY,
+            width: $(flyer).width() / divider,
+            height: $(flyer).height() / divider
+        }, 700,
+            function () {
+                $(flyingTo).fadeOut('fast', function () {
+                    $(flyingTo).fadeIn('fast', function () {
+                        $(flyerClone).fadeOut('fast', function () {
+                            $(flyerClone).remove();
+                        });
+                    });
+                });
+            });
+    }
+    function animationCart() {
+        $('html, body').animate({
+            'scrollTop': $(".icon-cart").position().top
+        });
+        var imgtodrag = $("#view-1").find("img").eq(0);
+        var itemImg = $(this).parent().find('img').eq(0);
+        flyToElement($(imgtodrag), $('.icon-cart'));
+    }
+    function addToCard() {
+        var prodId = @Model.Id;
+        var quantity = $('#quantity').val();
+        if (quantity == 0) {
+            if (language == "vi") {
+                alert("Vui lòng nhập số lượng lớn hơn 0");
+            } else {
+                alert("Please enter a number greater than 0");
+            }
+        } else {
+            animationCart();
+            $.ajax({
+                type: "POST",
+                url: "/ProductHome/Addtocart",
+                data: { ProdId: prodId, Quantity: quantity },
+                success: function (result) {
+                }
+            });
+        }
+    }
+
+</script>

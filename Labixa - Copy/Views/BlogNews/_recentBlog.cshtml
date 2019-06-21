@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Blog>
+@{
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <li>
+            <a href="/tin-tuc/@item.Slug" class="post-thumb"><img alt="@item.Title" src="@item.BlogImage_Default"></a>
+            @if (cookie == null || cookie.Value.Equals("vi"))
+            {
+                <div class="post-info fix"><a href="/tin-tuc/@item.Slug">@item.Title</a></div>
+            }
+            else
+            {
+                <div class="post-info fix"><a href="/tin-tuc/@item.Slug">@item.TitleEng</a></div>
+            }
+
+        </li>
+    }
+}
+

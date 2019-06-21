@@ -1,0 +1,86 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<Outsourcing.Data.Models.Blog>
+@{
+    ViewBag.Title = "Tin tức sự kiện |RISES.VN";
+    ViewBag.Description = "Tin tức sự kiện |RISES.VN";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    HttpCookie cookie = Request.Cookies["_culture"];
+
+}
+
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.Rise_News)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href="/">@Html.Raw(Resources.Home_Rise)</a></li>
+                    <li><a href="/danh-sach-tin-tuc"><span>@Html.Raw(Resources.Rise_News)</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area Start -->
+<div class="blog-page page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-xs-12">
+                    <!-- Single Blog -->
+                    <div class="single-blog fix">
+                        <div class="image">
+                            <a href="/tin-tuc/@item.Slug"><img src="@item.BlogImage_Default" alt="@item.Title" /></a>
+                        </div>
+                        <div class="content fix">
+
+                            @if (cookie == null || cookie.Value.Equals("vi"))
+                            {
+                                <h2><a href="/tin-tuc/@item.Slug">@item.Title</a></h2>
+                                <p>@item.Description</p>
+                            }
+                            else
+                            {
+                                <h2><a href="/tin-tuc/@item.Slug">@item.TitleEng</a></h2>
+                                <p>@item.DescriptionEng</p>
+                            }
+
+
+                        </div>
+                        <div class="blog-foot fix">
+                            @if (cookie == null || cookie.Value.Equals("vi"))
+                            {
+                                <a href="/tin-tuc/@item.Slug" class="read-more float-left">Xem thêm</a>
+                            }
+                            else
+                            {
+                                <a href="/tin-tuc/@item.Slug" class="read-more float-left">Read More</a>
+                            }
+
+
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+
+                @Html.PagedListPager(Model, page => Url.Action("Index", "BlogNews", new { page }))
+            </div>
+        </div>
+    </div>
+</div><!-- Blog Area End -->
+<!-- Brands Area Start -->

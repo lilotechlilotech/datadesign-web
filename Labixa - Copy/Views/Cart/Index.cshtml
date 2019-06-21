@@ -1,0 +1,340 @@
+﻿@using Labixa.ViewModels;
+@{
+    ViewBag.Title = "Thời trang nữ cao cấp |RISES.VN";
+    ViewBag.Description = "Chúng tôi tin tưởng trong việc cung cấp dịch vụ khách hàng tuyệt vời và chúng " +
+        "tôi được đáp ứng các khách hàng của chúng tôi. Nếu bạn có bất kỳ câu hỏi, ý kiến hoặc đề nghị,vui lòng liên hệ với chúng tôi! " +
+    "Chúng tôi rất mong nhận được hồi âm từ bạn.";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    ListProductCartModel modelCart = (ListProductCartModel)Session["Cart"];
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!-- Trang Chủ SLIDER -->
+<input value="@cookie.Value" id="language" hidden />
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.Rise_Card)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href="#">@Html.Raw(Resources.Home_Rise)</a></li>
+                    <li><span>@Html.Raw(Resources.Rise_Card)</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Page Start -->
+<div class="cart-page page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="/ProductHome/UpdateCart" method="post">
+                    <div class="table-responsive">
+                        <table class="table cart-table" id="table-cart">
+                            <thead>
+                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                {
+                                    <tr>
+                                        <th class="width-1">Hình ảnh</th>
+                                        <th class="width-2">Tên sản phẩm</th>
+                                        <th class="width-3">Đơn giá</th>
+                                        <th class="width-4">Số lượng</th>
+                                        <th class="width-5">Thành tiền</th>
+                                        <th class="width-6">Cập nhật</th>
+                                        <th class="width-6">Xóa</th>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <th class="width-1">Image</th>
+                                        <th class="width-2">Product Name</th>
+                                        <th class="width-3">Price</th>
+                                        <th class="width-4">Quantity</th>
+                                        <th class="width-5">Total</th>
+                                        <th class="width-6">Update</th>
+                                        <th class="width-6">Delete</th>
+                                    </tr>
+                                }
+                            </thead>
+                            <tbody>
+                                @if (modelCart != null)
+                                {
+                                    int i = 0;
+                                    foreach (var item in modelCart.listProduct)
+                                    {
+                                        i++;
+                                        <tr class="carttr_1">
+                                            <td>
+                                                <div class="cartpage-image">
+                                                    <a href="/san-pham-chi-tiet/@item.slug"><img alt="" src="@item.ProductImage"></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cartpage-pro-dec">
+                                                    @if (cookie == null || cookie.Value.Equals("vi"))
+                                                    {
+                                                        <a href="/san-pham-chi-tiet/@item.slug">@item.ProdName</a>
+                                                        <p>@item.Description</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="/san-pham-chi-tiet/@item.slug">@item.ProdNameEngh</a>
+                                                        <p>@item.DescriptionEng</p>
+                                                    }
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-page-price">
+                                                    @if (cookie == null || cookie.Value.Equals("vi"))
+                                                    {
+                                                        <p>@item.Price.ToString("#,##0") </p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p>@{var value = (Math.Round(((item.Price) / 23000), 3));} @value$</p>
+
+                                                    }
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-pro-quantity pro-quantity">
+                                                    <input type="text" id="quantity" value="@item.Quantity" name="qtybutton" class="pro-quantity-box">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="subtotal">
+                                                    @if (cookie == null || cookie.Value.Equals("vi"))
+                                                    {
+                                                        <p>@{var result = item.Price * item.Quantity;} @result.ToString("#,##0")</p>
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <p>
+                                                            @{var prices = Math.Round(((item.Price) / 23000), 3);
+                                                                var result = prices * item.Quantity;
+
+
+                                                            } @result$
+                                                        </p>
+                                                    }
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cartpage-delete-item">
+                                                    @* id product là @item.ProductId *@
+                                                    <a title="update item" href="javascript:void(0)" onclick="return UpdateCartJs(@i,@item.ProductId)"><i class="glyphicon glyphicon-repeat"></i></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cartpage-delete-item">
+                                                    <a title="Remove item" href="/ProductHome/DeleteCartProduct?Prod=@item.ProductId"><i class="fa fa-trash-o"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    @Html.Raw(Resources.Rise_CardDisc)
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                @if (modelCart != null)
+                {
+
+                    <div class="cartpage-button fix">
+                        <div class="button-left">
+                            <a href="/" class="btn">
+
+                                @Html.Raw(Resources.Rise_Continutes)
+
+
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <!-- total-amount start -->
+                            <div class="cartpage-total-amount">
+                                @Html.Raw(Resources.Rise_Total)
+                                @if (modelCart != null)
+                                {
+                                    if (modelCart.GiftCode != null)
+                                    {
+                                        if (cookie == null || cookie.Value.Equals("vi"))
+                                        {
+                                            <p>
+                                                <span class="sub-t">
+                                                    @Html.Raw(Resources.Rise_Total) <span class="new sub-t-p " style="color:red;font-size:18px">
+                                                        @modelCart.TotalAfterDiscount.ToString("#,##0")
+                                                    </span> <span class="old sub-t-p " style="text-decoration: line-through;">
+                                                        @modelCart.TotalPayment.ToString("#,##0")
+                                                    </span>
+                                                </span>
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p>
+                                                <span class="sub-t">
+                                                    @Html.Raw(Resources.Rise_Total) <span class="new sub-t-p " style="color:red;font-size:18px">
+                                                        @{var prices = Math.Round(((modelCart.TotalAfterDiscount) / 23000), 3);
+
+
+                                                        } @prices$
+                                                    </span> <span class="old sub-t-p " style="text-decoration: line-through;">
+                                                        @{var pricesVL = Math.Round(((modelCart.TotalPayment) / 23000), 3);
+
+
+                                                        } @pricesVL$
+                                                    </span>
+                                                </span>
+                                            </p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (cookie == null || cookie.Value.Equals("vi"))
+                                        {
+                                            <p>
+                                                <span class="sub-t">
+                                                    @Html.Raw(Resources.Rise_Total) <span class="sub-t-p">
+                                                        @modelCart.TotalPayment.ToString("#,##0")
+                                                    </span>
+                                                </span>
+                                            </p>
+                                        }
+                                        else
+                                        {
+
+
+                                            <p>
+                                                <span class="sub-t">
+                                                    Total payment<span class="sub-t-p">
+                                                        @{var pricesVL = Math.Round(((modelCart.TotalPayment) / 23000), 3);
+
+
+                                                        } @pricesVL$
+                                                    </span>
+                                                </span>
+                                            </p>
+
+                                        }
+                                    }
+                                    <!-- <p><span class="grand-t">Grand Total <span class="grand-t-p">$300</span></span>	</p> -->
+                                    <a href="/thanh-toan" class="btn">
+
+                                        @Html.Raw(Resources.Rise_Payment)
+
+                                    </a>
+                                }
+                            </div>
+                            <!-- total-amount end -->
+                        </div>
+                        <div class="button-right">
+                            <a id="deleteCart" href="/ProductHome/DeleteCart" class="btn">  @Html.Raw(Resources.Rise_DeleteCard)</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        @if (modelCart != null)
+        {
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12">
+                    <!-- Discount start -->
+                    <div class="cartpage-descount show">
+                        <h3>  @Html.Raw(Resources.Rise_DiscountCode)</h3>
+                        <div class="pro-descount-form">
+                            <input name="giftcode" id="giftcode" value="@modelCart.GiftCode" type="text" placeholder="Nhập mã giảm giá ở đây...">
+                            <button onclick="return CheckGiftCode()" class="btn">  @Html.Raw(Resources.Rise_UseCode)</button>
+                        </div>
+                    </div>
+                    <!-- Discount end -->
+                </div>
+
+            </div>
+        }
+    </div>
+</div><!-- About Page End -->
+<script>
+    var language = $('language').val();
+    function addToCard() {
+        var prodId = 1;
+        var quantity = $('#quantity').val();
+        if (quantity == 0) {
+            if (language == "vi") {
+                alert("Vui lòng nhập số lượng lớn hơn 0");
+            } else {
+                alert("Please enter a number greater than 0");
+            }
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "/ProductHome/Addtocart",
+                data: { ProdId: prodId, Quantity: quantity },
+                success: function (result) {
+                }
+            });
+        }
+    }
+    function DeleteCard() {
+        $.ajax({
+            type: "POST",
+            url: "/ProductHome/DeleteCart",
+            success: function (result) {
+            }
+        });
+    }
+    function UpdateCartJs(index, ProductId) {
+
+        //var firstname =  this.getElementById("table01").rows[index].cells[1].innerHTML;
+        var ele = document.getElementById("table-cart").rows[index].getElementsByTagName("input")[0].value
+        if (ele == 0) {
+            window.location.replace('/ProductHome/DeleteCartProduct?Prod=' + ProductId);
+            window.location.href = "/ProductHome/DeleteCartProduct?Prod=" + ProductId;
+            window.reload();
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "/ProductHome/Addtocart",
+                data: { ProdId: ProductId, Quantity: ele },
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        }
+
+    }
+    function CheckGiftCode() {
+        var codeG = $('#giftcode').val();
+        if (codeG == "" || codeG == null) {
+            if (language == "vi") {
+                alert("Vui lòng nhập mã giảm giá");
+            } else {
+                alert("Please enter discount code");
+            }
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "/ProductHome/CheckGiftCode",
+                data: { GiftCode: codeG },
+                success: function (result) {
+                    location.reload();
+                }
+            });
+        }
+    }
+</script>
