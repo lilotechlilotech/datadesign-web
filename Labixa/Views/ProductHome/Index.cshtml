@@ -1,139 +1,14 @@
-﻿@using PagedList.Mvc;
-@using PagedList;
-@model IPagedList<Outsourcing.Data.Models.Product>
-@{
-    HttpCookie cookie = Request.Cookies["_culture"];
-    ViewBag.Title = "Thời trang nữ cao cấp khuyến mãi giảm giá |RISES.VN";
-    ViewBag.Description = "Chúng tôi tin tưởng trong việc cung cấp dịch vụ khách hàng tuyệt vời và chúng " +
-        "tôi được đáp ứng các khách hàng của chúng tôi. Nếu bạn có bất kỳ câu hỏi, ý kiến hoặc đề nghị,vui lòng liên hệ với chúng tôi! " +
-    "Chúng tôi rất mong nhận được hồi âm từ bạn.";
-    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    Layout = "~/Views/Shared/_ProductLayoutDDV.cshtml";
 }
-<style>
-    .primary {
-        height: 393px;
-    }
-</style>
-<!-- HOME SLIDER -->
-<div class="page-banner padding-120 fix">
+<section class="coming_soon bg_s">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                @if (cookie == null || cookie.Value.Equals("vi"))
-                {
-                    <h1>@Model.FirstOrDefault().ProductCategory.Name</h1>
-                }
-                else
-                {
-                    <h1>@Model.FirstOrDefault().ProductCategory.Notes</h1>
-                }
-            </div>
-        </div>
+        <h2>Our site is under construction our website which will be ready soon.</h2>
+        <div class="countdown"></div>
+        <p>Copyrights 2019 <a href="/">Data Design</a> Viet Nam</p>
     </div>
-</div><!-- Page Banner End -->
-<!-- Shop Page Area Start -->
-<div class="shop-page page margin-70 fix">
-    <div class="container">
-        <div class="row">
-            <!-- Shop Tool Bar -->
-            <div class="products-container tab-products-container tab-content float-left fix">
-                <div class="tab-pane active" id="pro-grid">
-                    <!-- Single Product -->
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="single-product">
-                                @if (item.IsHomePage == true)
-                                {
-                                    <div class="pro-image-hover">
-                                        <a href="/san-pham-chi-tiet/@item.Slug" class="pro-image">
-                                            @if (cookie == null || cookie.Value.Equals("vi"))
-                                            {
-                                                <img class="primary" src="@item.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="@item.NameEng" />
-                                            }
-                                            else
-                                            {
-                                                <img class="primary" src="@item.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="@item.Name" />
-                                            }
-                                        </a>
-                                    </div>
-                                    <div class="pro-bref fix">
-                                        @if (cookie == null || cookie.Value.Equals("vi"))
-                                        {
-                                            <a class="pro-name" href="/san-pham-chi-tiet/@item.Slug">@item.Name</a>
-
-                                            <div class="pro-price float-right">
-
-                                                <span class="pro-priceOld">@item.Price.ToString("#,##0") đ</span>
-
-                                                <span class="old">@item.OldPrice.ToString("#,##0") đ</span>
-
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                            <a class="pro-name" href="/san-pham-chi-tiet/@item.Slug">@item.NameEng</a>
-
-                                            <div class="pro-price float-right">
-                                                <span class="pro-priceOld">
-                                                    @{var prices = Math.Round(((item.Price) / 23000), 3);} @prices $
-                                                </span>
-                                                <span class="old">
-                                                    @{var oldPrice = Math.Round(((item.OldPrice) / 23000), 3);} @oldPrice $
-                                                </span>
-
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="pro-image-hover">
-                                        <a href="/san-pham-chi-tiet/@item.Slug" class="pro-image">
-                                            @if (cookie == null || cookie.Value.Equals("vi"))
-                                            {
-                                                <img class="primary" src="@item.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="@item.NameEng" />
-                                            }
-                                            else
-                                            {
-                                                <img class="primary" src="@item.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="@item.Name" />
-                                            }
-                                        </a>
-                                    </div>
-                                    <div class="pro-bref fix">
-                                        @if (cookie == null || cookie.Value.Equals("vi"))
-                                        {
-                                            <a class="pro-name" href="/san-pham-chi-tiet/@item.Slug">@item.Name</a>
-
-                                            <div class="pro-price float-right">
-                                                <span class="pro-priceOld">@item.OldPrice.ToString("#,##0") đ</span>
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                            <a class="pro-name" href="/san-pham-chi-tiet/@item.Slug">@item.NameEng</a>
-
-                                            <div class="pro-price float-right">
-
-                                                <span class="pro-priceOld">
-                                                    @{var oldPrice = Math.Round(((item.OldPrice) / 23000), 3); } @oldPrice $
-                                                </span>
-
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div><div class="col-xs-12">
-                @Html.PagedListPager(Model, page => Url.Action("Index", "ProductHome", new { page }))
-
-            </div>
-        </div>
+    <div class="shap_s">
+        <img src="/Content/datadesign-product/images/shap/c-shap-2.png" alt="" class="s_shap_1">
+        <img src="/Content/datadesign-product/images/shap/c-shap-3.png" alt="" class="s_shap_2">
     </div>
-</div>
-
-<!-- Shop page Area End -->
+</section>
