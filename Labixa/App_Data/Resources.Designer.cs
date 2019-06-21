@@ -160,6 +160,196 @@ namespace Labixa.App_Data
                 return ResourceManager.GetString("Email", resourceCulture);
             }
         }
+        public static string Solution
+        {
+            get
+            {
+                return ResourceManager.GetString("Solution", resourceCulture);
+            }
+        }
+        public static string Card_Process
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Process", resourceCulture);
+            }
+        }
+        public static string Card_Gate
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Gate", resourceCulture);
+            }
+        }
+        public static string Card_Manufacturing
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Manufacturing", resourceCulture);
+            }
+        }
+        public static string Card_Process_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Process_detail", resourceCulture);
+            }
+        }
+        public static string Card_Gate_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Gate_detail", resourceCulture);
+            }
+        }
+        public static string Card_Manufacturing_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Manufacturing_detail", resourceCulture);
+            }
+        }
+        public static string Card_Visualization
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Visualization", resourceCulture);
+            }
+        }
+        public static string Card_Visualization_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Card_Visualization_detail", resourceCulture);
+            }
+        }
+        public static string Welcome
+        {
+            get
+            {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        public static string Contact_us
+        {
+            get
+            {
+                return ResourceManager.GetString("Contact_us", resourceCulture);
+            }
+        }
+        public static string What_We_Do
+        {
+            get
+            {
+                return ResourceManager.GetString("What_We_Do", resourceCulture);
+            }
+        }
+        public static string Solution_Product_title
+        {
+            get
+            {
+                return ResourceManager.GetString("Solution_Product_title", resourceCulture);
+            }
+        }
+        public static string Solution_Product_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Solution_Product_detail", resourceCulture);
+            }
+        }
+        public static string Clients
+        {
+            get
+            {
+                return ResourceManager.GetString("Clients", resourceCulture);
+            }
+        }
+        public static string Projects
+        {
+            get
+            {
+                return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+           
+        public static string Feedbacks
+        {
+            get
+            {
+                return ResourceManager.GetString("Feedbacks", resourceCulture);
+            }
+        }  
+        public static string Question_Contact_before
+        {
+            get
+            {
+                return ResourceManager.GetString("Question_Contact_before", resourceCulture);
+            }
+        }
+        public static string Question_Contact_after
+        {
+            get
+            {
+                return ResourceManager.GetString("Question_Contact_after", resourceCulture);
+            }
+        }
+        public static string Visit
+        {
+            get
+            {
+                return ResourceManager.GetString("Visit", resourceCulture);
+            }
+        }
+        public static string Call
+        {
+            get
+            {
+                return ResourceManager.GetString("Call", resourceCulture);
+            }
+        }
+        public static string Btn_Send_Message
+        {
+            get
+            {
+                return ResourceManager.GetString("Btn_Send_Message", resourceCulture);
+            }
+        }
+        public static string Your_Subject
+        {
+            get
+            {
+                return ResourceManager.GetString("Your_Subject", resourceCulture);
+            }
+        }
+        public static string Type_your_message
+        {
+            get
+            {
+                return ResourceManager.GetString("Type_your_message", resourceCulture);
+            }
+        }
+        public static string Your_name
+        {
+            get
+            {
+                return ResourceManager.GetString("Your_name", resourceCulture);
+            }
+        }
+        public static string Your_email
+        {
+            get
+            {
+                return ResourceManager.GetString("Your_email", resourceCulture);
+            }
+        }
+        public static string Drop_us_message
+        {
+            get
+            {
+                return ResourceManager.GetString("Drop_us_message", resourceCulture);
+            }
+        }
         #endregion
 
         #region [website rise]

@@ -261,4 +261,85 @@
   <data name="Rise_UseCode" xml:space="preserve">
     <value>sử dụng mã</value>
   </data>
+  <data name="Btn_Send_Message" xml:space="preserve">
+    <value>GỬI TIN NHẮN</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>Gọi chúng tôi !</value>
+  </data>
+  <data name="Card_Gate" xml:space="preserve">
+    <value>Cổng thông tin 3D</value>
+  </data>
+  <data name="Card_Gate_detail" xml:space="preserve">
+    <value>Tạo một không gian ảo từ quét 3D</value>
+  </data>
+  <data name="Card_Manufacturing" xml:space="preserve">
+    <value>Sản xuất thông minh</value>
+  </data>
+  <data name="Card_Manufacturing_detail" xml:space="preserve">
+    <value>Tạo kiến ​​thức về các sản phẩm 3D từ các quy trình kỹ thuật số</value>
+  </data>
+  <data name="Card_Process" xml:space="preserve">
+    <value>Quản lý quy trình 3D</value>
+  </data>
+  <data name="Card_Process_detail" xml:space="preserve">
+    <value>Tự do tích hợp các quy trình kỹ thuật số 3D</value>
+  </data>
+  <data name="Card_Visualization" xml:space="preserve">
+    <value>Trực quan 3D</value>
+  </data>
+  <data name="Card_Visualization_detail" xml:space="preserve">
+    <value>Liên kết thực tế và thực tế ảo để hiển thị dữ liệu 3D</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Người sử dụng</value>
+  </data>
+  <data name="Contact_us" xml:space="preserve">
+    <value>Liên hệ chúng tôi</value>
+  </data>
+  <data name="Drop_us_message" xml:space="preserve">
+    <value>Liên Hệ Ngay Cho Chúng Tôi</value>
+  </data>
+  <data name="Feedbacks" xml:space="preserve">
+    <value>Phản hồi</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Dự án</value>
+  </data>
+  <data name="Question_Contact_after" xml:space="preserve">
+    <value> Để Làm Chung Với Nhau? &lt;br&gt; Hãy Bàn Về Chúng Nào!</value>
+  </data>
+  <data name="Question_Contact_before" xml:space="preserve">
+    <value>Bạn Có Bất Kì</value>
+  </data>
+  <data name="Solution" xml:space="preserve">
+    <value>Giải pháp</value>
+  </data>
+  <data name="Solution_Product_detail" xml:space="preserve">
+    <value>Trí tưởng tượng của bạn có thể trở thành hiện thực với "Công nghệ 3D thông minh" sẽ giúp bạn dễ dàng tạo một mô hình ảo trong 3D.</value>
+  </data>
+  <data name="Solution_Product_title" xml:space="preserve">
+    <value>Quản Lý Sản Phẩm</value>
+  </data>
+  <data name="Type_your_message" xml:space="preserve">
+    <value>Nhập tin nhắn của bạn</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>Đến với chúng tôi !</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Chào mừng đến với thiết kế dữ liệu Việt Nam</value>
+  </data>
+  <data name="What_We_Do" xml:space="preserve">
+    <value>Chúng Tôi Làm Gì?</value>
+  </data>
+  <data name="Your_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Your_name" xml:space="preserve">
+    <value>Tên của bạn</value>
+  </data>
+  <data name="Your_Subject" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
 </root>

@@ -261,4 +261,88 @@
   <data name="Rise_UseCode" xml:space="preserve">
     <value>Use Code</value>
   </data>
+  <data name="Btn_Send_Message" xml:space="preserve">
+    <value>SEND A MESSAGE</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>Call Us !</value>
+  </data>
+  <data name="Card_Gate" xml:space="preserve">
+    <value>3D Content Gateway</value>
+  </data>
+  <data name="Card_Gate_detail" xml:space="preserve">
+    <value>Create a virtual space from 3D scanning</value>
+  </data>
+  <data name="Card_Manufacturing" xml:space="preserve">
+    <value>3D Intelligent Manufacturing</value>
+  </data>
+  <data name="Card_Manufacturing_detail" xml:space="preserve">
+    <value>Create knowledge about 3D products from digital processes</value>
+  </data>
+  <data name="Card_Process" xml:space="preserve">
+    <value>3D Process Management</value>
+  </data>
+  <data name="Card_Process_detail" xml:space="preserve">
+    <value>Freely integrating 3D digital processes</value>
+  </data>
+  <data name="Card_Visualization" xml:space="preserve">
+    <value>3D Realistic Visualization</value>
+  </data>
+  <data name="Card_Visualization_detail" xml:space="preserve">
+    <value>Linking reality and virtual reality To display 3D data</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="Contact_us" xml:space="preserve">
+    <value>CONTACT US</value>
+  </data>
+  <data name="Drop_us_message" xml:space="preserve">
+    <value>Drop Us A Line</value>
+  </data>
+  <data name="Feedbacks" xml:space="preserve">
+    <value>Feedbacks</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="Question_Contact_after" xml:space="preserve">
+    <value> To Work On Together?&lt;br&gt; Lest's Talk About It</value>
+  </data>
+  <data name="Question_Contact_before" xml:space="preserve">
+    <value>Do You Have Any </value>
+  </data>
+  <data name="Solution" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="Solution_Product" xml:space="preserve">
+    <value>3D Solution Product</value>
+  </data>
+  <data name="Solution_Product_detail" xml:space="preserve">
+    <value>Your imagination can come true with "Smart 3D technology" that will help you easily create a virtual model in 3D.</value>
+  </data>
+  <data name="Solution_Product_title" xml:space="preserve">
+    <value>Product Management</value>
+  </data>
+  <data name="Type_your_message" xml:space="preserve">
+    <value>Type your message</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>Visit Us !</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome To Data Design Viet Nam</value>
+  </data>
+  <data name="What_We_Do" xml:space="preserve">
+    <value>What We Do</value>
+  </data>
+  <data name="Your_email" xml:space="preserve">
+    <value>Your E-mail</value>
+  </data>
+  <data name="Your_name" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="Your_Subject" xml:space="preserve">
+    <value>Your Subject</value>
+  </data>
 </root>

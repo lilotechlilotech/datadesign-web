@@ -68,30 +68,37 @@
             <div class="collapse navbar-collapse" id="navtoggler">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#home">@Resources.Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Solution</a>
+                        <a class="nav-link" href="#about">@Resources.Solution</a>
                     </li>
 
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="#" data-toggle="dropdown">Product</a>
+                        <a class="nav-link" href="#" data-toggle="dropdown">@Resources.Product_Rise</a>
                         <ul class="dropdown-menu">
-                            <li><a onclick="goto('/comming-soon')">3D Scanning</a></li>
-                            <li><a onclick="goto('/comming-soon')" >3D Printing</a></li>
-                            <li><a onclick="goto('/comming-soon')">3D Modeling</a></li>
-                            <li><a onclick="goto('/comming-soon')">3D Machine</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Scanning</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Printing</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Modeling</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Machine</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#clients">Services</a>
+                        <a class="nav-link" href="#clients">@Resources.Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#work">Contact</a>
+                        <a class="nav-link" href="#work">@Resources.CONTACTS</a>
                     </li>
                     @*<li class="nav-item">*@
                     @*<li class="nav-item"><a href="#" data-slimstat="5"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a></li>*@
-                    <li class="nav-item"><a href="#"><p><img src="~/Images/uploaded/flag/vietnam.png" alt="Việt Nam"></p></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="goto('../Home/SetCulture?slug=vi')"><img src="~/Images/uploaded/flag/vietnam.png" alt="Việt Nam"></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="goto('../Home/SetCulture?slug=en')"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a>
+                    </li>
+
                     @*</li>*@
                 </ul>
             </div>
