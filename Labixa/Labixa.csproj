@@ -239,6 +239,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AlbumModels.cs" />
     <Compile Include="ViewModels\OrderTour.cs" />
+    <Compile Include="ViewModels\StaffViewModel.cs" />
     <Compile Include="ViewModels\TourModels.cs" />
   </ItemGroup>
   <ItemGroup>

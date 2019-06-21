@@ -10,6 +10,9 @@ using PagedList;
 using Labixa.ViewModels;
 using Labixa.Helpers;
 using Outsourcing.Core.Common;
+using Labixa.Areas.Admin.ViewModel;
+using Outsourcing.Core.Framework.Controllers;
+using AutoMapper;
 
 namespace Labixa.Controllers
 {
@@ -148,6 +151,17 @@ namespace Labixa.Controllers
             return RedirectToAction("Index", "Home");
         }
         #endregion
-        
+        [ValidateInput(false)]
+        [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
+        public ActionResult SendMessage(StaffFormModel obj, bool continueEditing)
+        {
+            obj.Phone = "09090909090";
+            if (ModelState.IsValid)
+            {
+                Staff item = Mapper.Map<StaffFormModel, Staff>(obj);
+                _staffService.CreateStaff(item);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

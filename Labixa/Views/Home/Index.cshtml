@@ -659,29 +659,30 @@
             <!--End col-lg-5-->
             <div class="col-lg-7">
                 <div class="container">
-                    <form class="contact-form">
+                    <form action="../Home/SendMessage" method="post" class="contact-form">
                         <div class="row">
+                            <input type="hidden" name="Phone" value="0909090909"/>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="name" placeholder="@Resources.Your_name">
+                                    <input class="form-control" type="text" name="Name" placeholder="@Resources.Your_name">
                                 </div>
                             </div>
                             <!--End col-lg-6-->
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="email" name="email" placeholder="@Resources.Your_email">
+                                    <input class="form-control" type="email" name="skype" placeholder="@Resources.Your_email">
                                 </div>
                             </div>
                             <!--End col-lg-6-->
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="subject" placeholder="@Resources.Your_Subject">
+                                    <input class="form-control" type="text" name="Yahoo" placeholder="@Resources.Your_Subject">
                                 </div>
                             </div>
                             <!--End col-lg-12-->
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="@Resources.Type_your_message"></textarea>
+                                    <textarea class="form-control" name="Description" placeholder="@Resources.Type_your_message"></textarea>
                                 </div>
                             </div>
                             <!--End col-lg-12-->
