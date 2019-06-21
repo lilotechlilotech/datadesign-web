@@ -73,14 +73,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Solution</a>
                     </li>
-                   
+
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown">Product</a>
-                        <ul class="dropdown-menu"> 
-                            <li><a href="/comming-soon" target="_self">3D Scanning</a></li>
-                            <li><a href="/comming-soon" target="_blank">3D Printing</a></li>
-                            <li><a href="/comming-soon">3D Modeling</a></li>
-                            <li><a href="/comming-soon">3D Machine</a></li>
+                        <a class="nav-link" href="#" data-toggle="dropdown">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="goto('/comming-soon')">3D Scanning</a></li>
+                            <li><a onclick="goto('/comming-soon')" >3D Printing</a></li>
+                            <li><a onclick="goto('/comming-soon')">3D Modeling</a></li>
+                            <li><a onclick="goto('/comming-soon')">3D Machine</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -142,4 +142,8 @@
     <script src="/Content/Datadesign-home/js/particles.js"></script>
     <script src="/Content/Datadesign-home/js/app.js"></script>
     <script src="/Content/Datadesign-home/js/scripts.js"></script>
+    <script>
+        function goto(hashtag) {
+            document.location = hashtag;
+        }</script>
 </body>
