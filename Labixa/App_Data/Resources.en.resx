@@ -307,7 +307,7 @@
     <value>Projects</value>
   </data>
   <data name="Question_Contact_after" xml:space="preserve">
-    <value> To Work On Together?&lt;br&gt; Lest's Talk About It</value>
+    <value> To Work On Together? Lest's Talk About It</value>
   </data>
   <data name="Question_Contact_before" xml:space="preserve">
     <value>Do You Have Any </value>
@@ -344,5 +344,14 @@
   </data>
   <data name="Your_Subject" xml:space="preserve">
     <value>Your Subject</value>
+  </data>
+  <data name="Address_contact" xml:space="preserve">
+    <value>Floor 7, Scetpa building, 19A Cong hoa Street, Ward 12, Tan Binh District, HCMC, Viet Nam</value>
+  </data>
+  <data name="Contact_us_email" xml:space="preserve">
+    <value>Contact us !</value>
+  </data>
+  <data name="What_we_know" xml:space="preserve">
+    <value>What We Know</value>
   </data>
 </root>

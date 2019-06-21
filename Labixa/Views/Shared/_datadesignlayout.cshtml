@@ -91,14 +91,19 @@
                     </li>
                     @*<li class="nav-item">*@
                     @*<li class="nav-item"><a href="#" data-slimstat="5"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a></li>*@
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="goto('../Home/SetCulture?slug=vi')"><img src="~/Images/uploaded/flag/vietnam.png" alt="Việt Nam"></a>
+                    @if (Resources.Home == "Home")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goto('../Home/SetCulture?slug=vi')"><img src="~/Images/uploaded/flag/vietnam.png" alt="Việt Nam"></a>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="goto('../Home/SetCulture?slug=en')"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a>
-                    </li>
-
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goto('../Home/SetCulture?slug=en')"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a>
+                        </li>
+                    }
                     @*</li>*@
                 </ul>
             </div>

@@ -350,6 +350,27 @@ namespace Labixa.App_Data
                 return ResourceManager.GetString("Drop_us_message", resourceCulture);
             }
         }
+        public static string Contact_us_email
+        {
+            get
+            {
+                return ResourceManager.GetString("Contact_us_email", resourceCulture);
+            }
+        }
+        public static string Address_contact
+        {
+            get
+            {
+                return ResourceManager.GetString("Address_contact", resourceCulture);
+            }
+        }
+        public static string What_we_know
+        {
+            get
+            {
+                return ResourceManager.GetString("What_we_know", resourceCulture);
+            }
+        }
         #endregion
 
         #region [website rise]

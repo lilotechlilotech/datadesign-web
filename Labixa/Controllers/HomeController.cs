@@ -44,7 +44,6 @@ namespace Labixa.Controllers
         public ActionResult Index()
         {
             var model = _productService.GetAllProducts().OrderByDescending(x => x.DateCreated);
-           
             return View(model);
         }
         public ActionResult Banner()

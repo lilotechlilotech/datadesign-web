@@ -307,10 +307,10 @@
     <value>Dự án</value>
   </data>
   <data name="Question_Contact_after" xml:space="preserve">
-    <value> Để Làm Chung Với Nhau? &lt;br&gt; Hãy Bàn Về Chúng Nào!</value>
+    <value> Để Làm Chung Với Nhau? Hãy Bàn Về Chúng Nào!</value>
   </data>
   <data name="Question_Contact_before" xml:space="preserve">
-    <value>Bạn Có Bất Kì</value>
+    <value>Bạn Có Bất Kì </value>
   </data>
   <data name="Solution" xml:space="preserve">
     <value>Giải pháp</value>
@@ -341,5 +341,14 @@
   </data>
   <data name="Your_Subject" xml:space="preserve">
     <value>Tiêu đề</value>
+  </data>
+  <data name="Address_contact" xml:space="preserve">
+    <value>Tầng 5, tòa nhà Scetpa, 19A Cộng Hòa, phường 12, quận Tân Bình, thành phố Hồ Chí Minh, Việt Nam</value>
+  </data>
+  <data name="Contact_us_email" xml:space="preserve">
+    <value>Liện hệ chúng tôi</value>
+  </data>
+  <data name="What_we_know" xml:space="preserve">
+    <value>Chúng Tôi Biết Cái Gì</value>
   </data>
 </root>
