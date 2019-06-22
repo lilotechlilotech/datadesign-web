@@ -1,6 +1,12 @@
-﻿<!--====================================================================
-                          Start Home
-  =====================================================================-->
+﻿
+@{
+    var blog1 = (Outsourcing.Data.Models.Blog)ViewData["blog1"];
+    var blog2 = (Outsourcing.Data.Models.Blog)ViewData["blog2"];
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!--====================================================================
+                         Start Home
+ =====================================================================-->
 <section class="home" id="home">
     <div id="particles-js"></div>
     <div class="container">
@@ -47,7 +53,7 @@
                 <div class="rectangle-two"></div>
             </div>
             <div class="col-lg-12 owl-carousel">
-               
+
                 <div class="introduction-content">
                     <div class="introduction-icon color2">
                         <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3dgatoway_color.png" /></span>
@@ -55,10 +61,9 @@
                     </div>
                     <!--End introduction-icon-->
                     <div class="introduction-inner">
-                        <h4>3D Content Gateway</h4>
+                        <h4>@Resources.Card_Gate</h4>
                         <p>
-                            Create a virtual space
-                            from 3D scanning
+                            @Resources.Card_Gate_detail
                         </p>
                     </div>
                     <!--End introduction-inner-->
@@ -71,10 +76,9 @@
                     </div>
                     <!--End introduction-icon-->
                     <div class="introduction-inner">
-                        <h4>3D Intelligent Manufacturing</h4>
+                        <h4>@Resources.Card_Manufacturing</h4>
                         <p>
-                            Create knowledge about 3D products
-                            from digital processes.
+                            @Resources.Card_Manufacturing_detail
                         </p>
                     </div>
                     <!--End introduction-inner-->
@@ -87,10 +91,9 @@
                     </div>
                     <!--End introduction-icon-->
                     <div class="introduction-inner">
-                        <h4>3D Realistic Visualization</h4>
+                        <h4>@Resources.Card_Visualization</h4>
                         <p>
-                            Linking reality and virtual reality
-                            To display 3D data
+                            @Resources.Card_Visualization_detail
                         </p>
                     </div>
                     <!--End introduction-inner-->
@@ -103,8 +106,8 @@
                     </div>
                     <!--End introduction-icon-->
                     <div class="introduction-inner">
-                        <h4>3D Process Management</h4>
-                        <p>Freely integrating 3D digital processes</p>
+                        <h4>@Resources.Card_Process</h4>
+                        <p>@Resources.Card_Process_detail</p>
                     </div>
                     <!--End introduction-inner-->
                 </div>
@@ -131,34 +134,44 @@
         <div class="row">
             <div class="col-lg-6 pt-20">
                 <div class="section-title">
-                    <h2>Welcome To Data Design Viet nam</h2>
-                    <h3>Create the future in 3D space</h3>
+                    <h2>@Resources.Welcome</h2>
+                    @if (cookie == null || cookie.Value.Equals("vi"))
+                    {
+                        <h3>@blog1.Title</h3>
+                    }
+                    else
+                    {
+                        <h3>@blog1.TitleEng</h3>
+                    }
                 </div>
                 <!--End section-title-->
-                <p>
-                    Data Design Solutions (Vietnam) Co., Ltd. was established on May 12, 2005, DataDesign Co., Ltd. 
-                    Nagoya City Headquarters. Experience in software, plant systems and machines. Which we can support the needs of users, from design concepts to machine use In order to give you the complete advantage of business, business, business model, software, 
-                    CAD / CAM, web-based collaboration, consulting, deployment, support, affiliates
-                </p>
-                <a class="btn-sm" href="#contact">Contact us</a>
+                @if (cookie == null || cookie.Value.Equals("vi"))
+                {
+                    <p>@blog1.Description</p>
+                }
+                else
+                {
+                    <p>@blog1.DescriptionEng</p>
+                }
+                <a class="btn-sm" href="#contact">@Resources.Contact_us</a>
             </div>
             <div class="col-lg-6 owl-carousel">
                 <!--image 1-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="https://www.datadesign.co.th/images/artec/artec-leo/artec-leo-volvo.jpg" alt="">
+                    <img src="@blog1.BlogImage_Default" alt="">
                 </div>
                 <!--End about-img-->
                 <!--image 3-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="https://www.datadesign.co.th/images/artec/artec-leo/artec-leo-2.png" alt="">
+                    <img src="@blog1.BlogImage_Option" alt="">
                 </div>
                 <!--End about-img-->
                 <!--image 2-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="~/Content/Datadesign-home/bg-intro.jpg" />
+                    <img src="@blog1.BlogImage_Square" />
                 </div>
                 <!--End about-img-->
 
@@ -180,8 +193,10 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="skills-video">
-                    <div class="overlay"></div>
-                    <a class="popup-video btn-play" href="https://www.youtube.com/watch?v=xNY3MTDAUpc">
+                    <div class="overlay">
+                        <img  src="@blog2.BlogImage_Default" />
+                    </div>
+                    <a class="popup-video btn-play" href="@blog2.BlogImage_Square">
                         <i class="fa fa-play"></i>
                     </a>
                 </div>
@@ -191,12 +206,28 @@
             <div class="col-lg-6">
                 <div class="skills-content pt-20">
                     <div class="section-title">
-                        <h2>What We Know</h2>
-                        <h3>Meet Our Skills</h3>
+                        <h2>@Resources.What_we_know</h2>
+                        @*<h3>Meet Our Skills</h3>*@
+                        @if (cookie == null || cookie.Value.Equals("vi"))
+                        {
+                            <h3>@blog2.Title</h3>
+                        }
+                        else
+                        {
+                            <h3>@blog2.TitleEng</h3>
+                        }
                     </div>
                     <!--End section-title-->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-                    <a class="btn-sm" href="#">Read More</a>
+                    @if (cookie == null || cookie.Value.Equals("vi"))
+                    {
+                        <p>@blog2.Description</p>
+                    }
+                    else
+                    {
+                        <p>@blog2.DescriptionEng</p>
+                    }
+
+                    <a class="btn-sm" href="#">@Resources.Read_more</a>
                 </div>
                 <!--End skills-content-->
             </div>
@@ -338,207 +369,10 @@
                         End Services
 =====================================================================-->
 <!--====================================================================
-                        Start Team
-=====================================================================-->
-<section class="team pt-95 pb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 lg-offset-2 mx-auto">
-                <div class="section-title text-center">
-                    <h2>Our Team</h2>
-                    <h3>Discover Our Talented Nerds</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-                </div>
-                <!--End section-title-->
-            </div>
-            <!--End col-lg-8-->
-        </div>
-        <!--End row-->
-        <div class="row">
-            <div class="col-sm-12 owl-carousel">
-                <div class="team-item">
-                    <div class="img-team">
-                        <img src="/Content/Datadesign-home/img/team/team1.jpg" alt="">
-                    </div>
-                    <!--End img-team-->
-                    <div class="team-infos">
-                        <div class="team-infos-inner">
-                            <h5>Sara Innou</h5>
-                            <p>Web Designer</p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!--End team-infos-inner-->
-                    </div>
-                    <!--End team-infos-->
-                </div>
-                <!--End team-item-->
-                <div class="team-item">
-                    <div class="img-team">
-                        <img src="/Content/Datadesign-home/img/team/team2.jpg" alt="">
-                    </div>
-                    <div class="team-infos">
-                        <div class="team-infos-inner">
-                            <h5>Nour Innou</h5>
-                            <p>Web Developer</p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!--End team-infos-inner-->
-                    </div>
-                    <!--End team-infos-->
-                </div>
-                <!--End tem-item-->
-                <div class="team-item">
-                    <div class="img-team">
-                        <img src="/Content/Datadesign-home/img/team/team3.jpg" alt="">
-                    </div>
-                    <div class="team-infos">
-                        <div class="team-infos-inner">
-                            <h5>Khaoula Innou</h5>
-                            <p>Web Developer</p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!--End team-infos-inner-->
-                    </div>
-                    <!--End team-infos-->
-                </div>
-                <!--End tem-item-->
-                <div class="team-item">
-                    <div class="img-team">
-                        <img src="/Content/Datadesign-home/img/team/team4.jpg" alt="">
-                    </div>
-                    <div class="team-infos">
-                        <div class="team-infos-inner">
-                            <h5>Fouad Innou</h5>
-                            <p>Web Designer</p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!--End team-infos-inner-->
-                    </div>
-                    <!--End team-infos-->
-                </div>
-                <!--End tem-item-->
-            </div>
-            <!--End col-sm-12-->
-        </div>
-        <!--End row-->
-    </div>
-    <!--End container-->
-</section>
-<!--====================================================================
-                        End Team
+
 =====================================================================-->
 <!--====================================================================
-                        Start Testimonials
-=====================================================================-->
-<section class="testimonials pt-95 pb-100" id="clients">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 lg-offset-2 mx-auto">
-                <div class="section-title text-center">
-                    <h2>Our Clients</h2>
-                    <h3>What They Say About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-                </div>
-                <!--End section-title-->
-            </div>
-            <!--End col-lg-8-->
-        </div>
-        <!--end row-->
-        <div class="row">
-            <div class="col-lg-8 lg-offset-2 mx-auto owl-carousel">
-                <!--Testimonial 1-->
-                <div class="testimonial-item color1">
-                    <div class="testimonial-img">
-                        <img src="/Content/Datadesign-home/img/testimonials/testimonial1.jpg" alt="">
-                    </div>
-                    <!--End testimonial-item-->
-                    <div class="testimonial-content">
-                        <i class="fas fa-quote-right"></i>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante.</p>
-                        <h5>Sara Inou</h5>
-                        <p class="post">Web Designer</p>
-                    </div>
-                    <!--End testimonial-content-->
-                </div>
-                <!--End testimonial-item-->
-                <!--Testimonial 2-->
-                <div class="testimonial-item color2">
-                    <div class="testimonial-img">
-                        <img src="/Content/Datadesign-home/img/testimonials/testimonial2.jpg" alt="">
-                    </div>
-                    <!--End testimonial-item-->
-                    <div class="testimonial-content">
-                        <i class="fas fa-quote-right"></i>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante.</p>
-                        <h5>Nour Taha</h5>
-                        <p class="post">General Manager</p>
-                    </div>
-                    <!--End testimonial-content-->
-                </div>
-                <!--End testimonial-item-->
-                <!--Testimonial 3-->
-                <div class="testimonial-item color3">
-                    <div class="testimonial-img">
-                        <img src="/Content/Datadesign-home/img/testimonials/testimonial3.jpg" alt="">
-                    </div>
-                    <!--End testimonial-item-->
-                    <div class="testimonial-content">
-                        <i class="fas fa-quote-right"></i>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante.</p>
-                        <h5>Khaoula Fona</h5>
-                        <p class="post">Web Designer</p>
-                    </div>
-                    <!--End testimonial-content-->
-                </div>
-                <!--End testimonial-item-->
-                <!--Testimonial 4-->
-                <div class="testimonial-item color4">
-                    <div class="testimonial-img">
-                        <img src="/Content/Datadesign-home/img/testimonials/testimonial4.jpg" alt="">
-                    </div>
-                    <!--End testimonial-item-->
-                    <div class="testimonial-content">
-                        <i class="fas fa-quote-right"></i>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante.</p>
-                        <h5>Loukmane Tany</h5>
-                        <p class="post">Web Developer</p>
-                    </div>
-                    <!--End testimonial-content-->
-                </div>
-                <!--End testimonial-item-->
-            </div>
-            <!--End col-lg-8-->
-        </div>
-        <!--End row-->
-    </div>
-    <!--End container-->
-</section>
-<!--====================================================================
-                        End Testimonials
+
 =====================================================================-->
 <!--====================================================================
                         Start Work
@@ -548,12 +382,10 @@
         <div class="row">
             <div class="col-lg-8 lg-offset-2 mx-auto">
                 <div class="section-title text-center">
-                    <h2>3D Solution product</h2>
-                    <h3>Product management</h3>
+                    <h2>@Resources.Solution</h2>
+                    <h3>@Resources.Solution_Product_title</h3>
                     <p>
-                        Your imagination can come true with "Smart 3D technology"
-                        that will help you easily create a virtual model
-                        in 3D.
+                        @Resources.Solution_Product_detail
                     </p>
                 </div>
                 <!--End section-title-->
@@ -723,7 +555,7 @@
                 <div class="number-item text-center">
                     <div class="number-content">
                         <h5 class="counter color1">356</h5>
-                        <p>Clients</p>
+                        <p>@Resources.Clients</p>
                     </div>
                     <!--End number-content-->
                 </div>
@@ -735,7 +567,7 @@
                 <div class="number-item text-center mt-80">
                     <div class="number-content">
                         <h5 class="counter color2">425</h5>
-                        <p>Projects</p>
+                        <p>@Resources.Projects</p>
                     </div>
                     <!--End number-content-->
                 </div>
@@ -747,7 +579,7 @@
                 <div class="number-item text-center mt-60">
                     <div class="number-content">
                         <h5 class="counter color4">1023</h5>
-                        <p>Feedbacks</p>
+                        <p>@Resources.Feedbacks</p>
                     </div>
                     <!--End number-content-->
                 </div>
@@ -763,7 +595,7 @@
                         End Numbers
 =====================================================================-->
 <!--====================================================================
-                 
+
 =====================================================================-->
 <!--====================================================================
                         Start Project
@@ -772,8 +604,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 lg-offset 1 mx-auto text-center">
-                <h2>Do You Have Any <span>Projects</span> To Work On Together? Let's Talk About It</h2>
-                <a href="#contact" class="btn-sm">Contact Us</a>
+                <h2>@Resources.Question_Contact_before<span>@Resources.Projects</span> @Resources.Question_Contact_after</h2>
+                <a href="#contact" class="btn-sm">@Resources.Contact_us</a>
             </div>
         </div>
     </div>
@@ -782,7 +614,7 @@
                         End Project
 =====================================================================-->
 <!--====================================================================
-                    
+
 =====================================================================-->
 <!--====================================================================
                         Start Contact
@@ -792,8 +624,8 @@
         <div class="row">
             <div class="col-lg-8 lg-offset-2 mx-auto">
                 <div class="section-title text-center">
-                    <h2>Contact Us</h2>
-                    <h3>Drop Us A Line</h3>
+                    <h2>@Resources.Contact_us</h2>
+                    <h3>@Resources.Drop_us_message</h3>
                     <p></p>
                 </div>
                 <!--End section-title-->
@@ -813,8 +645,8 @@
                                 </div>
                                 <!--End contact-icon-->
                                 <div class="contact-inner">
-                                    <h4>Visit Us !</h4>
-                                    <p>Floor 7, Scetpa building, 19A Cong hoa Street, Ward 12, Tan Binh District, HCMC, Viet Nam</p>
+                                    <h4>@Resources.Visit</h4>
+                                    <p>@Resources.Address_contact</p>
                                 </div>
                                 <!--End contact-inner-->
                             </div>
@@ -829,7 +661,7 @@
                                 </div>
                                 <!--End contact-icon-->
                                 <div class="contact-inner">
-                                    <h4>Call Us !</h4>
+                                    <h4>@Resources.Call</h4>
                                     <p>(+84) 028 38115290</p>
                                 </div>
                                 <!--End contact-inner-->
@@ -845,7 +677,7 @@
                                 </div>
                                 <!--End contact-icon-->
                                 <div class="contact-inner">
-                                    <h4>Contact Us !</h4>
+                                    <h4>@Resources.Contact_us_email</h4>
                                     <p>truonglong@datadesign.co.jp</p>
                                 </div>
                                 <!--End contact-inner-->
@@ -861,35 +693,36 @@
             <!--End col-lg-5-->
             <div class="col-lg-7">
                 <div class="container">
-                    <form class="contact-form">
+                    <form action="../Home/SendMessage" method="post" class="contact-form">
                         <div class="row">
+                            <input type="hidden" name="Phone" value="0909090909" />
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="name" placeholder="Your name">
+                                    <input class="form-control" type="text" name="Name" placeholder="@Resources.Your_name">
                                 </div>
                             </div>
                             <!--End col-lg-6-->
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="email" name="email" placeholder="Your E-mail">
+                                    <input class="form-control" type="email" name="skype" placeholder="@Resources.Your_email">
                                 </div>
                             </div>
                             <!--End col-lg-6-->
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="subject" placeholder="Your Subject">
+                                    <input class="form-control" type="text" name="Yahoo" placeholder="@Resources.Your_Subject">
                                 </div>
                             </div>
                             <!--End col-lg-12-->
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="Type your message"></textarea>
+                                    <textarea class="form-control" name="Description" placeholder="@Resources.Type_your_message"></textarea>
                                 </div>
                             </div>
                             <!--End col-lg-12-->
                             <!--Contact button-->
                             <button type="submit" class="btn-sm" id="form-contact-submit">
-                                Send a Message
+                                @Resources.Btn_Send_Message
                             </button>
                         </div>
                         <!--End row-->

@@ -1,0 +1,340 @@
+/*Extra Large Devices>=1200px*/
+@media (min-width:1200px) {}
+
+/*Large Devices>=992px and <1200px*/
+@media (min-width:992px) and (max-width:1199px) {
+
+	/*About Section*/
+	.about {
+		padding-bottom: 110px !important
+	}
+
+	/*Contact Section*/
+	.contact .contact-form textarea {
+		height: 170px !important
+	}
+}
+
+/*Medium Devices>=768px and <992px*/
+@media(min-width:768px) and (max-width:991px) {
+
+	/*Navbar*/
+	.navbar-brand {
+		padding-left: 12px;
+		padding-right: 12px
+	}
+
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #fff;
+	}
+
+	.dark.navbar-light .navbar-collapse {
+		background: #0d0f16
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.navbar-nav .nav-item .nav-link {
+		color: #585858
+	}
+
+	.dropdown-menu li {
+		text-align: center
+	}
+
+	/*About Section*/
+	.about .pt-20 {
+		padding-top: 0 !important
+	}
+
+	.about-img {
+		margin-left: 0;
+		margin-top: 70px
+	}
+
+	/*Skills Section*/
+	.skills {
+		padding-bottom: 110px !important
+	}
+
+	.skills-video {
+		margin-right: 0 !important;
+		margin-bottom: 30px;
+	}
+
+	.skills-content {
+		padding-top: 0 !important;
+		margin-left: 0
+	}
+
+	/*Numbers Section*/
+	.numbers {
+		padding-bottom: 70px !important
+	}
+
+	.number-wave {
+		height: 0;
+		width: 0
+	}
+
+	.number-item {
+		margin-top: 0 !important;
+		margin-bottom: 30px
+	}
+
+	/*Contact*/
+	.contact {
+		padding-bottom: 100px !important
+	}
+}
+
+/*Small Devices>=576px and <768px*/
+@media(min-width:576px) and (max-width:767px) {
+	.section-title h3 {
+		font-size: 38px
+	}
+
+	/*Navbar*/
+	.navbar-brand {
+		padding-left: 12px;
+		padding-right: 12px
+	}
+
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #fff;
+	}
+
+	.dark.navbar-light .navbar-collapse {
+		background: #0d0f16
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.navbar-nav .nav-item .nav-link {
+		color: #585858
+	}
+
+	.dropdown-menu li {
+		text-align: center
+	}
+
+	/*Home*/
+	.banner-content h1 {
+		font-size: 50px
+	}
+
+	/*About Section*/
+	.about .pt-20 {
+		padding-top: 0 !important
+	}
+
+	.about-img {
+		margin-left: 0;
+		margin-top: 70px
+	}
+
+	/*Skills Section*/
+	.skills {
+		padding-bottom: 110px !important
+	}
+
+	.skills-video {
+		margin-right: 0 !important;
+		margin-bottom: 30px;
+	}
+
+	.skills-content {
+		padding-top: 0 !important;
+		margin-left: 0
+	}
+
+	/*Numbers Section*/
+	.numbers {
+		padding-bottom: 70px !important
+	}
+
+	.number-wave {
+		height: 0;
+		width: 0
+	}
+
+	.number-item {
+		margin-top: 0 !important;
+		margin-bottom: 30px
+	}
+
+	/*Testimonials*/
+	.testimonials {
+		padding-bottom: 95px !important
+	}
+
+	.testimonial-item {
+		padding: 0;
+		border-left: transparent !important;
+		border-top: transparent !important;
+		border-right: transparent !important;
+	}
+
+	.testimonial-item:before,
+	.testimonial-item:after {
+		height: 0;
+		width: 0;
+		border-left: transparent !important;
+		border-top: transparent !important;
+		border-right: transparent !important;
+	}
+
+	.testimonial-img,
+	.testimonial-img:before {
+		margin: 0 auto
+	}
+
+	.testimonial-content p,
+	.testimonial-content h5 {
+		text-align: center
+	}
+
+	.testimonial-content .fa-quote-right {
+		left: 0px;
+	}
+
+	/*Contact*/
+	.contact {
+		padding-bottom: 100px !important
+	}
+}
+
+/*Extra Small Devices<576px*/
+@media(max-width:575px) {
+	.section-title h3 {
+		font-size: 30px
+	}
+
+	/*Navbar*/
+    .navbar-brand {
+        text-align: left;
+        /* padding-left: 12px; */
+        /* padding-right: 12px; */
+        width: 74%;
+        height: auto;
+    }
+
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #fff;
+	}
+
+	.dark.navbar-light .navbar-collapse {
+		background: #0d0f16
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.navbar-nav .nav-item .nav-link {
+		color: #585858
+	}
+
+	.dropdown-menu li {
+		text-align: center
+	}
+
+	/*Home*/
+	.banner-content h1 {
+		font-size: 35px
+	}
+
+	/*About Section*/
+	.about .pt-20 {
+		padding-top: 0 !important
+	}
+
+	.about-img {
+		margin-left: 0;
+		margin-top: 70px
+	}
+
+	/*Skills Section*/
+	.skills {
+		padding-bottom: 110px !important
+	}
+
+	.skills-video {
+		margin-right: 0 !important;
+		margin-bottom: 30px;
+	}
+
+	.skills-content {
+		padding-top: 0 !important;
+		margin-left: 0
+	}
+
+	/*Numbers Section*/
+	.numbers {
+		padding-bottom: 70px !important
+	}
+
+	.number-wave {
+		height: 0;
+		width: 0
+	}
+
+	.number-item {
+		margin-top: 0 !important;
+		margin-bottom: 30px
+	}
+
+	/*Testimonials*/
+	.testimonials {
+		padding-bottom: 95px !important
+	}
+
+	.testimonial-item {
+		padding: 0;
+		border-left: transparent !important;
+		border-top: transparent !important;
+		border-right: transparent !important;
+	}
+
+	.testimonial-item:before,
+	.testimonial-item:after {
+		height: 0;
+		width: 0;
+		border-left: transparent !important;
+		border-top: transparent !important;
+		border-right: transparent !important;
+	}
+
+	.testimonial-img,
+	.testimonial-img:before {
+		margin: 0 auto
+	}
+
+	.testimonial-content p,
+	.testimonial-content h5 {
+		text-align: center
+	}
+
+	.testimonial-content .fa-quote-right {
+		left: 0px;
+	}
+
+	/*Contact*/
+	.contact {
+		padding-bottom: 100px !important
+	}
+
+}

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.WebsiteAttribute>
+@{
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<div class="brands-area padding-70 fix">
+    <div class="container">
+        <div class="row">
+            <!-- Brands Area Title -->
+            <div class="col-xs-12">
+                <div class="section-title fix">
+                    @if (cookie == null || cookie.Value.Equals("vi"))
+                    {
+                        <h2>Thương Hiệu</h2>
+                    }
+                    else
+                    {
+                        <h2>Brand</h2>
+                    }
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <!-- Brands Slider -->
+                <div class="brand-slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div class="single-brand">
+                            <img src="@item.Value" alt="RISES.VN" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+﻿@model Outsourcing.Data.Models.Blog
+@{
+    ViewBag.Title = Model.Title + " |RISES.VN";
+    ViewBag.Description = Model.Description + " |RISES.VN";
+    ViewBag.Keywords = Model.MetaKeywords + "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    ViewBag.Image = "http://www.rises.vn" + Model.BlogImage_Default;
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!-- Page Banner Start -->
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                @if (cookie != null && cookie.Value.Equals("vi"))
+                {
+                    <h1>Chi Tiết Tin Tức</h1>
+                }
+                else
+                {
+                    <h1>New Detail</h1>
+                }
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/danh-sach-tin-tuc"><span itemprop="name">@Html.Raw(Resources.Rise_News)</span></a></li>
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/tin-tuc/@Model.Slug">
+
+                            @if (cookie != null && cookie.Value.Equals("vi"))
+                            {
+                                <span itemprop="name">@Model.Title</span>
+                            }
+                            else
+                            {
+                                <span itemprop="name">@Model.TitleEng</span>
+                            }
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area Start -->
+<div class="blog-details-page page-left-sidebar page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <div class="blog-sidebar row">
+
+                    <div class="sin-sidebar  blog-recent-sidebar col-md-12 col-sm-6 col-xs-12 fix">
+                        @if (cookie == null || cookie.Value.Equals("vi"))
+                        {
+                            <h2>Bài Mới</h2>
+                        }
+                        else
+                        {
+                            <h1>News</h1>
+                        }
+                        <ul>
+                            @Html.Action("RecentPost", "BlogNews")
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-12" itemscope itemtype="http://schema.org/NewsArticle">
+                <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://google.com/article" />
+                <div class="sin-blog-post">
+                    <div class="post-thumbnail" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img alt="@Model.Title" src="@Model.BlogImage_Default"></div>
+                    <meta itemprop="url" content="@Model.BlogImage_Default">
+                    <meta itemprop="width" content="800">
+                    <meta itemprop="height" content="400">
+                    <div class="post-info-wrapper fix">
+                        @if (cookie == null || cookie.Value.Equals("vi"))
+                        {
+                            <h1 class="post-title" itemprop="headline">@Model.Title</h1>
+                            <div class="postsummary">
+                                @Html.Raw(Model.Content)
+                            </div>
+                        }
+                        else
+                        {
+                            <h1 class="post-title" itemprop="headline">@Model.TitleEng</h1>
+                            <div class="postsummary">
+                                @Html.Raw(Model.ContentEng)
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area End -->

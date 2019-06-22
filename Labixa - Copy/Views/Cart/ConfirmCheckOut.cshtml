@@ -1,0 +1,174 @@
+﻿@model Labixa.ViewModels.ListProductCartModel
+@{
+    ViewBag.Title = "Xác nhận đơn hàng đặt thành công |Rises.vn";
+    ViewBag.Description = "Chúng tôi tin tưởng trong việc cung cấp dịch vụ khách hàng tuyệt vời và chúng " +
+        "tôi được đáp ứng các khách hàng của chúng tôi. Nếu bạn có bất kỳ câu hỏi, ý kiến hoặc đề nghị,vui lòng liên hệ với chúng tôi! " +
+    "Chúng tôi rất mong nhận được hồi âm từ bạn.";
+    ViewBag.Keywords = "RISES.VN, rises, lycasa, thời trang nữ, váy đẹp, đầm đẹp";
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+
+<!-- Page Banner Start -->
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.Rise_Confirm)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<div class="page-breadcrumb fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href="/">@Html.Raw(Resources.Home_Rise)</a></li>
+                    <li><span>@Html.Raw(Resources.Rise_Confirm)</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Page Start -->
+<div class="checkout-page page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="checkoutAcco" class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a><span>1</span>@Html.Raw(Resources.Rise_paymentInfo)</a>
+                        </div>
+                        <div class="panel-collapse collapse in" id="coMethod">
+                            <div class="panel-body">
+                                <div class="register-acco col-md-12">
+                                    <h2>@Html.Raw(Resources.Rise_customInfo)</h2>
+                                    <div class="login-form">
+                                        <form action="#">
+                                            <label for="name">@Html.Raw(Resources.Rise_NameCus)<span>*</span></label>
+                                            <input type="name" disabled="disabled" id="name" value="@Model.CustomerName" />
+                                            <label for="phone">@Html.Raw(Resources.Rise_PhoneCus) <span>*</span></label>
+                                            <input type="phone" disabled="disabled" id="phone" name="CustomePhone" value="@Model.CustomePhone" />
+                                            <label for="address">@Html.Raw(Resources.Rise_Address) <span>*</span></label>
+                                            <input type="address" disabled="disabled" id="address" value="@Model.CustomerAddress" />
+                                            <label for="description">@Html.Raw(Resources.Rise_Note)<span></span></label>
+                                            <textarea id="description" disabled="disabled" name="description" value="@Model.CustomerNote">@Model.CustomerNote</textarea>
+                                            <label class="btn col-md-12">@Html.Raw(Resources.Rise_Thanks)</label>
+                                        </form>
+                                    </div>
+                                    <!-- <div class="select-acco">
+                                        <form action="#">
+                                            <input type="radio" name="Register" value="Guest" id="guest"><label for="guest">Thanh toán sau khi nhận hàng</label>
+                                            <br>
+                                            <input type="radio" name="Register" value="Register" id="Register"><label for="Register">Thanh toán bằng thẻ Visa/Master Card </label>
+                                        </form>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel-group" id="checkoutProgress">
+                    <div class="panel panel-default">
+                        @if (Model != null)
+                        {
+                            <div class="panel-heading">
+                                <a><span>2</span>@Html.Raw(Resources.Product_Rise)</a>
+                            </div>
+                            <div class="panel-collapse">
+                                @foreach (var item in Model.listProduct)
+                                {
+                                    <div class="section-pro-info">
+                                        <div class="checkout-pro-info panel-body ">
+                                            @if (cookie == null || cookie.Value.Equals("vi"))
+                                            {
+                                                <h5>@item.ProdName</h5>
+
+                                            }
+                                            else
+                                            {
+                                                <h5>@item.ProdNameEngh</h5>
+
+                                            }
+                                            <div class="float-left">
+                                                <img class="img-thumbnail" src="@item.ProductImage" />
+                                            </div>
+                                            <div class="float-left quantity">
+                                                <label>@Html.Raw(Resources.Rise_Quality): @item.Quantity</label>
+                                            </div>
+                                            <div class="float-left price">
+                                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                                {
+                                                    <label>Giá tiền: @item.Price.ToString("#,##0") Đ </label>
+                                                }
+                                                else
+                                                {
+                                                    <label>Price:  @{var value = (Math.Round(((item.Price) / 23000), 3));} @value$ </label>
+                                                }
+
+                                            </div>
+                                            <div class="float-left price">
+                                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                                {
+                                                    <label>Thành Tiền: @{var result = item.Price * item.Quantity;} @result.ToString("#,##0")</label>
+                                                }
+                                                else
+                                                {
+                                                    <label>
+                                                        Payment:
+                                                        @{var prices = Math.Round(((item.Price) / 23000), 3);
+                                                            var result = prices * item.Quantity;
+
+
+                                                        } @result$
+
+                                                    </label>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @if (Model.GiftCode != null)
+                                {
+
+                                    if (cookie == null || cookie.Value.Equals("vi"))
+                                    {
+                                        <label style="font-size: 18px" class="float-right">
+                                            Tổng Cộng: @Model.TotalAfterDiscount.ToString("#,##0") Đ
+                                        </label>
+                                    }
+                                    else
+                                    {
+                                        <label style="font-size: 18px" class="float-right">
+                                            Total:   @{var value = Math.Round(((Model.TotalAfterDiscount) / 23000), 3);} @value$
+                                        </label>
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (cookie == null || cookie.Value.Equals("vi"))
+                                    {
+                                        <label style="font-size: 18px" class="float-right">Tổng Cộng: @Model.TotalPayment.ToString("#,##0") Đ</label>
+                                    }
+                                    else
+                                    {
+                                        <label style="font-size: 18px" class="float-right">
+                                            Total:   @{var value = Math.Round(((Model.TotalPayment) / 23000), 3);} @value$
+                                        </label>
+                                    }
+
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

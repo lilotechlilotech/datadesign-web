@@ -792,6 +792,9 @@ a.btn-sm:hover {
 	display: block
 }
 
+li a img{
+  margin-top: -7px;
+}
 .navbar-nav .dropdown-menu a {
 	color: #444;
 	display: inline-block

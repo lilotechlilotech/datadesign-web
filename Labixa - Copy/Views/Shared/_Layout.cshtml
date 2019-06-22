@@ -1,0 +1,158 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop='name' content="Thời trang nữ Đầm/Váy Áo và phụ kiện |Rises.v" />
+    <link rel="canonical" href="http://rises.vn" itemprop="url">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    @{
+        HttpCookie cookie = Request.Cookies["_culture"];
+
+    }
+    @if (ViewBag.Title != null)
+    {
+        <title>@ViewBag.Title </title>
+    }
+    else
+    {
+        <title> Thời trang nữ Đầm/Váy Áo và phụ kiện |Rises.vn </title>
+    }
+
+    <meta name="adx:sections" content="http://rises.vn">
+    @if (ViewBag.Description != null)
+    {
+        <meta name="description" content="@ViewBag.Description">
+        <meta property="og:description" content="@ViewBag.Description">
+
+    }
+    else
+    {
+        <meta name="description" content="Xu hướng thời trang nữ 2019-Hè năm nay có gì mới? Bộ sưu tập sơ mi, váy-đầm công sở, quần tây, áo khoác-vest mới giá cực tốt tại RISES">
+
+    }
+    @if (ViewBag.Image != null)
+    {
+        <meta property="og:image" content="@ViewBag.Image">
+    }
+    else
+    {
+        <meta property="og:image" content="http://rises.vn/Content/Final-Rises.png">
+    }
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thời trang nữ Đầm/Váy Áo và phụ kiện - RISES">
+    <meta property="og:url" content="http://rises.vn">
+    <meta property="og:site_name" content="RISES.VN">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <!--START CSS-->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/font-awesome.min.css">
+    <!-- Mean Menu CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/meanmenu.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/owl.carousel.min.css">
+    <!-- simpleLens CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/jquery.simpleLens.css">
+    <!-- Price Slider CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/jquery-price-slider.css">
+    <!-- Nivo Slider CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/nivo-slider.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/animate.min.css">
+    <!-- Hover Effect CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/hover-effect.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/Content/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/ThyNeighbor/css/responsive.css">
+    <!--END CSS-->
+    <!-- Modernizer JS -->
+    <script src="~/Content/ThyNeighbor/js/modernizr-2.8.3.min.js"></script>
+    <!--google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--FAVICONS-->
+    <link rel="shortcut icon" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/Final-Rises.png">
+    <!--FAVICONS-->
+    <link rel="shortcut icon" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/Final-Rises.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/Final-Rises.png">
+
+    <!--END FAVICONS-->
+</head>
+
+<body id="startpage">
+    <span itemscope itemtype="http://schema.org/Organization">
+        <link itemprop="url" href="http://rises.vn">
+        <a itemprop="sameAs" href="https://www.facebook.com/lilotech2015"></a>
+    </span>
+    <style>
+        .icon-cart-mobile {
+            display: none !important;
+        }
+    </style>
+    @* start header *@
+    @Html.Action("getHeader", "Home")
+    @* end header *@
+
+    @RenderBody()
+    @*@Html.Action("BrandList", "BlogNews")*@
+
+    <!--start copyright-->
+    @Html.Action("getFooter", "Home")
+
+
+    <!--end copyright-->
+    <!--Start js-->
+
+    <script src="~/Content/ThyNeighbor/js/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/Content/ThyNeighbor/js/bootstrap.min.js"></script>
+    <!-- Nivo Slider JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.nivo.slider.pack.js"></script>
+    <!-- Mean Menu JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.meanmenu.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="~/Content/ThyNeighbor/js/owl.carousel.min.js"></script>
+    <!-- ScrollUP JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.scrollup.min.js"></script>
+    <!-- TreeView JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.treeview.js"></script>
+    <!-- Price Slider JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery-price-slider.js"></script>
+    <!-- simpleLens JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.simpleLens.min.js"></script>
+    <!-- Match Height JS -->
+    <script src="~/Content/ThyNeighbor/js/jquery.matchHeight-min.js"></script>
+    <!-- WOW JS -->
+    <script src="~/Content/ThyNeighbor/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- Main JS -->
+    <script src="~/Content/ThyNeighbor/js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137852758-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-137852758-1');
+    </script>
+
+</body>
+</html>

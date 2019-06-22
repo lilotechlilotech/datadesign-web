@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Liên Hệ Rises.vn";
+    ViewBag.Description = "Chúng tôi tin tưởng trong việc cung cấp dịch vụ khách hàng tuyệt vời và chúng "+
+        "tôi được đáp ứng các khách hàng của chúng tôi. Nếu bạn có bất kỳ câu hỏi, ý kiến hoặc đề nghị,vui lòng liên hệ với chúng tôi! "+
+    "Chúng tôi rất mong nhận được hồi âm từ bạn.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!-- HOME SLIDER -->
+<div class="page-banner padding-120 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@Html.Raw(Resources.CONTACTS)</h1>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Banner End -->
+<!-- About Page Start -->
+<div class="contact-page page margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="contact-info">
+                    <div class="title"><h3>@Html.Raw(Resources.CONTACTS)</h3></div>
+                    <div class="row">
+                        <div class="col-sm-8 col-xs-12">
+                            <p>
+                               @Html.Raw(Resources.Rise_about)
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="sin-contact fix">
+                                <img src="/Content/ThyNeighbor/img/icons/address-2.png" alt="" />
+                                <p>@Html.Raw(Resources.Rise_AddressDetail)</p>
+                            </div>
+                            <div class="sin-contact fix">
+                                <img src="/Content/ThyNeighbor/img/icons/phone-2.png" alt="" />
+                                <p>090 66 44 030</p>
+                            </div>
+                            <div class="sin-contact fix">
+                                <img src="/Content/ThyNeighbor/img/icons/globe-2.png" alt="" />
+                                <p><a href="#">about@rises.vn</a><a href="#">www.rises.vn</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <iframe width='100%' height='450' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://maps.vietbando.com/maps/vbdEmbed.aspx?t=1&st=0&sk=68a+d%c3%a2n+th%e1%ba%afng+1,+t%c3%a2n+th%e1%bb%9bi+nh%c3%ac,+h%c3%b3c+m%c3%b4n,+h%e1%bb%93+ch%c3%ad+minh&l=17&kv=10.8924004,106.583776&cl=151013&sb' style='color:#D98923;'></iframe>
+            </div>
+        </div>
+    </div>
+</div><!-- About Page End -->

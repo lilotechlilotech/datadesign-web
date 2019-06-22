@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+@{
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
 
 
 <!-- Mirrored from infallible-visvesvaraya-02b171.netlify.com/light - particles.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Jun 2019 03:22:02 GMT -->
@@ -12,11 +15,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="Personal, Portfolio, Creative">
-    <meta name="description" content="Cukur Digital Agency Template">
-    <meta name="author" content="kholie-b">
+    <meta name="description" content="">
+    <meta name="author" content="Data Design Viet nam">
 
     <!-- Main Page Title -->
-    <title>Cukur - Digital Agency Template</title>
+    <title>Data Design Viet Nam </title>
+    <link rel="icon" href="~/Content/Datadesign-home/logo.JPG" type="image/x-icon" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900%7cOpen+Sans:400,600,700,800" rel="stylesheet">
@@ -67,27 +71,40 @@
             <div class="collapse navbar-collapse" id="navtoggler">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#home">@Resources.Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Solution</a>
+                        <a class="nav-link" href="#about">@Resources.Solution</a>
                     </li>
-                   
+
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown">Product</a>
+                        <a class="nav-link" href="#" data-toggle="dropdown">@Resources.Product_Rise</a>
                         <ul class="dropdown-menu">
-                            <li><a href="portfolio.html">3D Scanning</a></li>
-                            <li><a href="blog.html">3D Printing</a></li>
-                            <li><a href="404.html">3D Modeling</a></li>
-                            <li><a href="404.html">3D Machine</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Scanning</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Printing</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Modeling</a></li>
+                            <li><a onclick="goto('/comming-soon')"> 3D Machine</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#clients">Services</a>
+                        <a class="nav-link" href="#clients">@Resources.Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#work">Contact</a>
+                        <a class="nav-link" href="#work">@Resources.CONTACTS</a>
                     </li>
+                    @if (Resources.Home == "Home")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goto('../Home/SetCulture?slug=vi')"><img src="~/Images/uploaded/flag/vietnam.png" alt="Việt Nam"></a>
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goto('../Home/SetCulture?slug=en')"><img src="~/Images/uploaded/flag/united-states.png" alt="English"></a>
+                        </li>
+                    }
                 </ul>
             </div>
             <!--End navbar-collapse-->
@@ -141,4 +158,8 @@
     <script src="/Content/Datadesign-home/js/particles.js"></script>
     <script src="/Content/Datadesign-home/js/app.js"></script>
     <script src="/Content/Datadesign-home/js/scripts.js"></script>
+    <script>
+        function goto(hashtag) {
+            document.location = hashtag;
+        }</script>
 </body>

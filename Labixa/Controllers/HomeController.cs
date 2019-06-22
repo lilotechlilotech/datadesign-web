@@ -10,6 +10,9 @@ using PagedList;
 using Labixa.ViewModels;
 using Labixa.Helpers;
 using Outsourcing.Core.Common;
+using Labixa.Areas.Admin.ViewModel;
+using Outsourcing.Core.Framework.Controllers;
+using AutoMapper;
 
 namespace Labixa.Controllers
 {
@@ -24,6 +27,7 @@ namespace Labixa.Controllers
         private readonly IStaffService _staffService;
         private readonly IProductAttributeMappingService _productAttributeMappingService;
         private readonly IProductRelationshipService _productRelationshipService;
+        //private readonly I ;
 
 
 
@@ -44,7 +48,12 @@ namespace Labixa.Controllers
         public ActionResult Index()
         {
             var model = _productService.GetAllProducts().OrderByDescending(x => x.DateCreated);
-           
+            var blog1 = _blogService.GetBlogById(1);
+            var blog2 = _blogService.GetBlogById(2);
+            //var blogimages = _;
+            ViewData["blog1"] = blog1;
+            ViewData["blog2"] = blog2;
+
             return View(model);
         }
         public ActionResult Banner()
@@ -149,6 +158,17 @@ namespace Labixa.Controllers
             return RedirectToAction("Index", "Home");
         }
         #endregion
-        
+        [ValidateInput(false)]
+        [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
+        public ActionResult SendMessage(StaffFormModel obj, bool continueEditing)
+        {
+            obj.Phone = "09090909090";
+            if (ModelState.IsValid)
+            {
+                Staff item = Mapper.Map<StaffFormModel, Staff>(obj);
+                _staffService.CreateStaff(item);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

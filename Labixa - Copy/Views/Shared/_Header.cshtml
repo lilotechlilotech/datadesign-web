@@ -1,0 +1,172 @@
+﻿@{
+    var dat = (IEnumerable<Outsourcing.Data.Models.WebsiteAttribute>)ViewBag.social;
+    //HttpCookie cookie;
+    //try
+    //{
+
+    //    cookie = new HttpCookie("_culture");
+    //    cookie.Value = "vi";
+
+    //    cookie.Expires = DateTime.Now.AddYears(1);
+    //}
+    //catch (Exception e)
+    //{
+    //    cookie = Request.Cookies["_culture"];
+    //}
+    HttpCookie cookie = Request.Cookies["_culture"];
+
+}
+
+<!--start header-->
+<header>
+    <div class="header">
+        <!-- Header Top Start -->
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-xs-12">
+                        <!-- Header Top Phone and Email -->
+                        <div class="header-top-left fix">
+                            <div class="phone">
+                                <i class="fa fa-phone"></i>
+                                <span>(84)  090 66 44 030</span>
+                            </div>
+                            <div class="email">
+                                <i class="fa fa-envelope"></i>
+                                <a href="#">phuongly@rises.vn</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <!-- Header Top Social -->
+                        <div class="header-social">
+                            @if (dat != null)
+                            {
+                                <a target="_blank" href="@dat.Where(p=>p.Description.ToLower().Equals("facebook")).FirstOrDefault().Value"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="@dat.Where(p=>p.Description.ToLower().Equals("instagram")).FirstOrDefault().Value"><i class="fa fa-instagram"></i></a>
+                                <a target="_blank" href="@dat.Where(p=>p.Description.ToLower().Equals("youtube")).FirstOrDefault().Value"><i class="fa fa-youtube"></i></a>
+                                <a href="/language/vi" target="_blank">
+                                    VN <img width="20" height="20"
+                                            src="~/Content/ThyNeighbor/img/icons/vietnam-icon.png" alt="icon-vi" />
+                                </a>
+                                <a href="/language/en" target="_blank">
+                                    ENG <img width="20" height="20"
+                                             src="~/Content/ThyNeighbor/img/icons/Flag_of_United_Kingdom_-_Circle-512.png" alt="icon-enlo" />
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="header-top-right">
+                            <!-- Header Top Account -->
+                            <ul class="account">
+                                <li><a href="#">My Account</a></li>
+                            </ul>
+                            <!-- Header Top Currency -->
+                            <ul class="currency">
+                                <li>
+                                    <a href="#" data-toggle="dropdown">$USD</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">URO</a></li>
+                                        <li><a href="#">GBP</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- Header Top Language -->
+                            <ul class="language">
+                                <li>
+                                    <a href="#" data-toggle="dropdown">English(UK)</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">French</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Header Top End -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="header-bottom-top-img col-md-4">
+                        <div class="col-md-12">
+                            <!-- Header Logo -->
+                            <div class="logo"><a href="/"><img src="~/Content/ThyNeighbor/img/logo/Rises1.png" class="img-fluid"></a></div>
+                        </div>
+                    </div>
+                    <div class="header-bottom-top col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-menu hidden-sm hidden-xs">
+                                    <nav>
+                                        <ul>
+                                            <li class="active">
+                                                <a href="/">@Html.Raw(Resources.Home_Rise)</a>
+                                            </li>
+                                            <li><a href="/khuyen-mai">OnSale</a></li>
+                                            <li>
+                                                <a>@Html.Raw(Resources.Product_Rise)</a>
+                                                <div class="mega-menu">
+                                                    <ul>               
+                                                        <li><a href="/san-pham/dam-vay">@Html.Raw(Resources.Dress_Rise)</a></li>
+                                                        <li><a href="/san-pham/ao">@Html.Raw(Resources.Shirt_Rise)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li> <a href="/san-pham/phu-kien">@Html.Raw(Resources.Accessories_Rise)</a> </li>
+                                            <li><a href="/lien-he">@Html.Raw(Resources.Information_Rise)</a></li>
+                                            <li><a href="/danh-sach-tin-tuc">@Html.Raw(Resources.Rise_News)</a></li>
+                                            <li><a href="/gio-hang" class="icon-cart"></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Main Menu End -->
+                                <!-- Mobile Menu Start -->
+                                <div class="mobile-menu">
+                                    <nav class="hidden">
+                                        <ul>
+                                            <li class="active">
+                                                <a href="/">@Html.Raw(Resources.Home_Rise)</a>
+                                            </li>
+                                            <li><a href="/khuyen-mai">ONSALE</a></li>
+
+                                            <li>
+                                                <a>@Html.Raw(Resources.Product_Rise)</a>
+
+                                                <ul>
+                                                    <li><a href="/san-pham/dam-vay">@Html.Raw(Resources.Dress_Rise)</a></li>
+                                                    <li><a href="/san-pham/ao">@Html.Raw(Resources.Shirt_Rise)</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="/san-pham/phu-kien">@Html.Raw(Resources.Accessories_Rise)</a></li>
+                                            <li><a href="/lien-he">@Html.Raw(Resources.Information_Rise)</a></li>
+                                            <li><a href="/danh-sach-tin-tuc">@Html.Raw(Resources.Rise_News)</a></li>
+                                            <li><a href="/gio-hang">@Html.Raw(Resources.Rise_Card)</a></li>
+                                            <li>
+                                                <a href="/language/vi" target="_blank">
+                                                    VN <img width="20" height="20"
+                                                            src="~/Content/ThyNeighbor/img/icons/vietnam-icon.png" alt="icon-vi" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/language/en" target="_blank">
+                                                    ENG <img width="20" height="20"
+                                                             src="~/Content/ThyNeighbor/img/icons/Flag_of_United_Kingdom_-_Circle-512.png" alt="icon-enlo" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div><!-- Mobile Menu End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Area Start -->
+                </div>
+            </div>
+        </div>
+    </div><!-- Header Area End -->
+</header>
+<!--end header-->

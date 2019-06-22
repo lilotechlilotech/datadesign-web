@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Blog>
+@{
+    ViewBag.Title = "_Blog";
+    HttpCookie cookie = Request.Cookies["_culture"];
+    
+}
+
+<div class="blog-area margin-70 fix">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Area Title -->
+            <div class="col-xs-12">
+                <div class="section-title fix">
+                    <h2>@Html.Raw(Resources.Rise_BlogNews)</h2>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <!-- Blog Slider -->
+                <div class="blog-slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <!-- Single Blog -->
+                        <div class="single-blog fix">
+                            <div class="image">
+                                <a href="/tin-tuc/@item.Slug"><img src="@item.BlogImage_Default" alt="@item.Title" /></a>
+                            </div>
+                            <div class="content fix">
+                                @if (cookie == null || cookie.Value.Equals("vi"))
+                                {
+                                    <h2><a href="/tin-tuc/@item.Slug">@item.Title</a></h2>
+                                    <p>@item.Description</p>
+                                }
+                                else
+                                {
+                                    <h2><a href="/tin-tuc/@item.Slug">@item.TitleEng</a></h2>
+                                    <p>@item.DescriptionEng</p>
+                                }
+
+
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
