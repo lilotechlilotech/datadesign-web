@@ -27,6 +27,7 @@ namespace Labixa.Controllers
         private readonly IStaffService _staffService;
         private readonly IProductAttributeMappingService _productAttributeMappingService;
         private readonly IProductRelationshipService _productRelationshipService;
+        //private readonly I ;
 
 
 
@@ -47,6 +48,12 @@ namespace Labixa.Controllers
         public ActionResult Index()
         {
             var model = _productService.GetAllProducts().OrderByDescending(x => x.DateCreated);
+            var blog1 = _blogService.GetBlogById(1);
+            var blog2 = _blogService.GetBlogById(2);
+            //var blogimages = _;
+            ViewData["blog1"] = blog1;
+            ViewData["blog2"] = blog2;
+
             return View(model);
         }
         public ActionResult Banner()

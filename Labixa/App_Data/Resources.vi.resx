@@ -351,4 +351,7 @@
   <data name="What_we_know" xml:space="preserve">
     <value>Chúng Tôi Biết Cái Gì</value>
   </data>
+  <data name="Read_more" xml:space="preserve">
+    <value>ĐỌC THÊM</value>
+  </data>
 </root>

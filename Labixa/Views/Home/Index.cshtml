@@ -1,6 +1,12 @@
-﻿<!--====================================================================
-                          Start Home
-  =====================================================================-->
+﻿
+@{
+    var blog1 = (Outsourcing.Data.Models.Blog)ViewData["blog1"];
+    var blog2 = (Outsourcing.Data.Models.Blog)ViewData["blog2"];
+    HttpCookie cookie = Request.Cookies["_culture"];
+}
+<!--====================================================================
+                         Start Home
+ =====================================================================-->
 <section class="home" id="home">
     <div id="particles-js"></div>
     <div class="container">
@@ -129,14 +135,24 @@
             <div class="col-lg-6 pt-20">
                 <div class="section-title">
                     <h2>@Resources.Welcome</h2>
-                    <h3>Create the future in 3D space</h3>
+                    @if (cookie == null || cookie.Value.Equals("vi"))
+                    {
+                        <h3>@blog1.Title</h3>
+                    }
+                    else
+                    {
+                        <h3>@blog1.TitleEng</h3>
+                    }
                 </div>
                 <!--End section-title-->
-                <p>
-                    Data Design Solutions (Vietnam) Co., Ltd. was established on May 12, 2005, DataDesign Co., Ltd.
-                    Nagoya City Headquarters. Experience in software, plant systems and machines. Which we can support the needs of users, from design concepts to machine use In order to give you the complete advantage of business, business, business model, software,
-                    CAD / CAM, web-based collaboration, consulting, deployment, support, affiliates
-                </p>
+                @if (cookie == null || cookie.Value.Equals("vi"))
+                {
+                    <p>@blog1.Description</p>
+                }
+                else
+                {
+                    <p>@blog1.DescriptionEng</p>
+                }
                 <a class="btn-sm" href="#contact">@Resources.Contact_us</a>
             </div>
             <div class="col-lg-6 owl-carousel">
@@ -177,8 +193,10 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="skills-video">
-                    <div class="overlay"></div>
-                    <a class="popup-video btn-play" href="https://www.youtube.com/watch?v=xNY3MTDAUpc">
+                    <div class="overlay">
+                        <img  src="@blog2.BlogImage_Default" />
+                    </div>
+                    <a class="popup-video btn-play" href="@blog2.BlogImage_Square">
                         <i class="fa fa-play"></i>
                     </a>
                 </div>
@@ -189,11 +207,27 @@
                 <div class="skills-content pt-20">
                     <div class="section-title">
                         <h2>@Resources.What_we_know</h2>
-                        <h3>Meet Our Skills</h3>
+                        @*<h3>Meet Our Skills</h3>*@
+                        @if (cookie == null || cookie.Value.Equals("vi"))
+                        {
+                            <h3>@blog2.Title</h3>
+                        }
+                        else
+                        {
+                            <h3>@blog2.TitleEng</h3>
+                        }
                     </div>
                     <!--End section-title-->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-                    <a class="btn-sm" href="#">Read More</a>
+                    @if (cookie == null || cookie.Value.Equals("vi"))
+                    {
+                        <p>@blog2.Description</p>
+                    }
+                    else
+                    {
+                        <p>@blog2.DescriptionEng</p>
+                    }
+
+                    <a class="btn-sm" href="#">@Resources.Read_more</a>
                 </div>
                 <!--End skills-content-->
             </div>
@@ -661,7 +695,7 @@
                 <div class="container">
                     <form action="../Home/SendMessage" method="post" class="contact-form">
                         <div class="row">
-                            <input type="hidden" name="Phone" value="0909090909"/>
+                            <input type="hidden" name="Phone" value="0909090909" />
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="Name" placeholder="@Resources.Your_name">

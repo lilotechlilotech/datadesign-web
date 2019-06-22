@@ -371,6 +371,13 @@ namespace Labixa.App_Data
                 return ResourceManager.GetString("What_we_know", resourceCulture);
             }
         }
+        public static string Read_more
+        {
+            get
+            {
+                return ResourceManager.GetString("Read_more", resourceCulture);
+            }
+        }
         #endregion
 
         #region [website rise]
