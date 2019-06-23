@@ -419,17 +419,17 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="@pro.ProductCategoryId" data-sort="value">
                         <div class="work-item popup-img creative-work">
                             <div class="work-content">
-                                <img src="https://www.datadesign.co.th/images/products-new/3D-scan/leo_car_in_min-300x200.jpg" alt="">
+                                <img src="@pro.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="">
                                 <div class="popup-title">
                                     <div class="work-inner">
                                         <h6 class="title">
                                             @if (cookie.Value == "vi")
                                             {
-                                                <a href="https://www.datadesign.co.th/images/products-new/3D-scan/leo_car_in_min-300x200.jpg">@pro.Name</a>
+                                                <a href="@pro.Content" target="_blank">@pro.Name</a>
                                             }
                                             else
                                             {
-                                                <a href="https://www.datadesign.co.th/images/products-new/3D-scan/leo_car_in_min-300x200.jpg">@pro.NameEng</a>
+                                                <a href="@pro.Content" target="_blank">@pro.NameEng</a>
                                             }
                                         </h6>
                                         @if (cookie.Value == "vi")
