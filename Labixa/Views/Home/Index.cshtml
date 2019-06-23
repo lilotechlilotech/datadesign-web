@@ -422,16 +422,19 @@
                                 <img src="@pro.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="">
                                 <div class="popup-title">
                                     <div class="work-inner">
-                                        <h6 class="title">
-                                            @if (cookie.Value == "vi")
-                                            {
-                                                <a href="@pro.Content" target="_blank">@pro.Name</a>
-                                            }
-                                            else
-                                            {
-                                                <a href="@pro.Content" target="_blank">@pro.NameEng</a>
-                                            }
-                                        </h6>
+                                        <a href="@pro.Content" class="title" target="_blank">
+                                            <h6 style="color:#E06E31">
+                                                @if (cookie.Value == "vi")
+                                                {
+                                                    @pro.Name
+
+                                                }
+                                                else
+                                                {
+                                                    @pro.NameEng
+                                                }
+                                            </h6>
+                                        </a>
                                         @if (cookie.Value == "vi")
                                         {
                                             <p class="category">@pro.Description</p>
