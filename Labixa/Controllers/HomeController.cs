@@ -13,6 +13,7 @@ using Outsourcing.Core.Common;
 using Labixa.Areas.Admin.ViewModel;
 using Outsourcing.Core.Framework.Controllers;
 using AutoMapper;
+using Microsoft.Ajax.Utilities;
 
 namespace Labixa.Controllers
 {
@@ -48,22 +49,28 @@ namespace Labixa.Controllers
         public ActionResult Index()
         {
             var model = _productService.GetAllProducts().OrderByDescending(x => x.DateCreated);
+            var category = _productcategoryService.GetProductCategoriesHome().Where(p => p.Deleted == false).ToList();
+            var products = _productService.GetAllProducts().Where(p => p.Deleted == false);
+            category.ForEach(x =>
+            {
+                x.Products = products.Where(c => x.Id == c.ProductCategoryId).ToList();
+            });
             var blog1 = _blogService.GetBlogById(1);
             var blog2 = _blogService.GetBlogById(2);
             //var blogimages = _;
             ViewData["blog1"] = blog1;
             ViewData["blog2"] = blog2;
-
+            ViewData["category"] = category;
             return View(model);
         }
         public ActionResult Banner()
         {
             var model = _websiteAttributeService.GetWebsiteAttributes().Where(p => p.Type.Equals("Banner")).ToList();
-            return PartialView("_BannerHome",model);
+            return PartialView("_BannerHome", model);
         }
         public ActionResult About()
         {
-            
+
             return View();
         }
 
@@ -75,10 +82,10 @@ namespace Labixa.Controllers
         /// <returns></returns>
         public ActionResult getHeader()
         {
-            var websiteAttribute = _websiteAttributeService.GetWebsiteAttributes().Where(p=>p.Type.ToLower().Equals("social")).ToList();
+            var websiteAttribute = _websiteAttributeService.GetWebsiteAttributes().Where(p => p.Type.ToLower().Equals("social")).ToList();
             ViewBag.social = websiteAttribute;
             var list = _productcategoryService.GetProductCategories();
-            return PartialView("_Header",list);
+            return PartialView("_Header", list);
         }
         public ActionResult getFooter()
         {
@@ -101,7 +108,7 @@ namespace Labixa.Controllers
         /// <returns></returns>
         public ActionResult Products()
         {
-         
+
             return View();
         }
         public ActionResult DetailProduct()
@@ -110,7 +117,7 @@ namespace Labixa.Controllers
         }
         public PartialViewResult GetBlog()
         {
-            var model = _blogService.GetBlogs().OrderByDescending(p=>p.DateCreated).Take(4).ToList();
+            var model = _blogService.GetBlogs().OrderByDescending(p => p.DateCreated).Take(4).ToList();
             return PartialView("_Blog", model);
         }
         public ActionResult PolicyBuy()
@@ -138,7 +145,7 @@ namespace Labixa.Controllers
             //return RedirectToAction("Index", "Home");
             slug = CultureHelper.GetImplementedCulture(slug);
             HttpCookie cookie = Request.Cookies["_culture"];
-            if(slug == null)
+            if (slug == null)
             {
                 slug = ViewBag.cookiValues;
             }

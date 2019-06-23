@@ -15,6 +15,7 @@ namespace Outsourcing.Service
     {
 
         IEnumerable<ProductCategory> GetProductCategories();
+        IEnumerable<ProductCategory> GetProductCategoriesHome();
         ProductCategory GetProductCategoryById(int productCategoryId);
         void CreateProductCategory(ProductCategory productCategory);
         void EditProductCategory(ProductCategory productCategoryToEdit);
@@ -85,6 +86,12 @@ namespace Outsourcing.Service
         
             //    yield return new ValidationResult("ProductCategory", "ErrorString");
             return null;
+        }
+
+        public IEnumerable<ProductCategory> GetProductCategoriesHome()
+        {
+            var productCategorys = productCategoryRepository.GetAll();
+            return productCategorys;
         }
 
         #endregion

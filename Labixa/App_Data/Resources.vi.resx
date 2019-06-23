@@ -354,4 +354,58 @@
   <data name="Read_more" xml:space="preserve">
     <value>ĐỌC THÊM</value>
   </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Thương hiệu</value>
+  </data>
+  <data name="Branding_detail" xml:space="preserve">
+    <value>Thương hiệu số 1 toàn cầu</value>
+  </data>
+  <data name="Clean_Code" xml:space="preserve">
+    <value>Code gọn gàng</value>
+  </data>
+  <data name="Clean_Code_detail" xml:space="preserve">
+    <value>Chi tiết code gọng gàng sạch sẽ</value>
+  </data>
+  <data name="Creative_Design" xml:space="preserve">
+    <value>Thiết Kế Sáng Tạo</value>
+  </data>
+  <data name="Creative_Design_detail" xml:space="preserve">
+    <value>Chi tiết thiết kế sáng tạo</value>
+  </data>
+  <data name="DIGITAL_TRANSFORMATION" xml:space="preserve">
+    <value>CHUYỂN ĐỔI KỸ THUẬT SỐ</value>
+  </data>
+  <data name="Our_Services" xml:space="preserve">
+    <value>Dịch vụ của chúng tôi</value>
+  </data>
+  <data name="Our_Services_Detail" xml:space="preserve">
+    <value>Dịch vụ của chúng tôi</value>
+  </data>
+  <data name="Slide_description" xml:space="preserve">
+    <value>Thiết kế dữ liệu là một điều phối viên quá trình 3D thiết kế thông minh không gian ảo kỹ thuật số. Với công nghệ 3D tiên tiến</value>
+  </data>
+  <data name="Support247" xml:space="preserve">
+    <value>Hỗ trợ 24/7</value>
+  </data>
+  <data name="Support_detail" xml:space="preserve">
+    <value>Hỗ trợ</value>
+  </data>
+  <data name="User_Experience" xml:space="preserve">
+    <value>Kinh Nghiệm Người Dùng</value>
+  </data>
+  <data name="User_Experience_detail" xml:space="preserve">
+    <value>Chi tiết kinh nghiệm người dùng</value>
+  </data>
+  <data name="User_Interface" xml:space="preserve">
+    <value>Giao Diện Người Dùng</value>
+  </data>
+  <data name="User_Interface_detail" xml:space="preserve">
+    <value>Chi tiết giao diện người dùng</value>
+  </data>
+  <data name="What_Can_We_Do" xml:space="preserve">
+    <value>Chúng Tôi Có Thể Làm Gì</value>
+  </data>
+  <data name="scroll_down" xml:space="preserve">
+    <value>TIẾP THEO</value>
+  </data>
 </root>

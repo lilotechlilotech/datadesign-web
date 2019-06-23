@@ -357,4 +357,58 @@
   <data name="Read_more" xml:space="preserve">
     <value>READ MORE`</value>
   </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Branding</value>
+  </data>
+  <data name="Branding_detail" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</value>
+  </data>
+  <data name="Clean_Code" xml:space="preserve">
+    <value>Clean Code</value>
+  </data>
+  <data name="Clean_Code_detail" xml:space="preserve">
+    <value>Clean code detail</value>
+  </data>
+  <data name="Creative_Design" xml:space="preserve">
+    <value>Creative Design</value>
+  </data>
+  <data name="Creative_Design_detail" xml:space="preserve">
+    <value>Creative design detail</value>
+  </data>
+  <data name="DIGITAL_TRANSFORMATION" xml:space="preserve">
+    <value>DIGITAL TRANSFORMATION</value>
+  </data>
+  <data name="Our_Services" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Our_Services_Detail" xml:space="preserve">
+    <value>Our service detail</value>
+  </data>
+  <data name="Slide_description" xml:space="preserve">
+    <value>Data Design is a 3D process coordinator that intelligently designs digital virtual space. With advanced 3D technology</value>
+  </data>
+  <data name="Support247" xml:space="preserve">
+    <value>24/7 Support</value>
+  </data>
+  <data name="Support_detail" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="User_Experience" xml:space="preserve">
+    <value>User Experience</value>
+  </data>
+  <data name="User_Experience_detail" xml:space="preserve">
+    <value>User  experience detail</value>
+  </data>
+  <data name="User_Interface" xml:space="preserve">
+    <value>User Interface</value>
+  </data>
+  <data name="User_Interface_detail" xml:space="preserve">
+    <value>User interface detail</value>
+  </data>
+  <data name="What_Can_We_Do" xml:space="preserve">
+    <value>What Can We Do</value>
+  </data>
+  <data name="scroll_down" xml:space="preserve">
+    <value>SCROLL DOWN</value>
+  </data>
 </root>
