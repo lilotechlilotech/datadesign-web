@@ -28,6 +28,11 @@ namespace Labixa.Controllers
                 Response.SetCookie(cookie);
             }
             cultureName = "en";
+            cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ?
+                        Request.UserLanguages[0] :  // obtain it from HTTP header AcceptLanguages
+                        null;
+            HttpCookie cookie = new HttpCookie("_culture", cultureName);
+            Response.SetCookie(cookie);
             // Validate culture name
             cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
             //cultureName = "vi";
