@@ -5,6 +5,11 @@
     var category = (IEnumerable<Outsourcing.Data.Models.ProductCategory>)ViewData["category"];
     HttpCookie cookie = Request.Cookies["_culture"];
 }
+<style>
+    .services-content {
+        min-height:318px;
+    }
+</style>
 <!--====================================================================
                          Start Home
  =====================================================================-->
@@ -193,11 +198,9 @@
             <div class="col-lg-6">
                 <div class="skills-video">
                     <div class="overlay">
-                        <img src="@blog2.BlogImage_Default" />
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3vQtiW5_ISg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <a class="popup-video btn-play" href="@blog2.BlogImage_Square">
-                        <i class="fa fa-play"></i>
-                    </a>
+
                 </div>
                 <!--End skills-video-->
             </div>
@@ -258,7 +261,7 @@
         <!--End row-->
         <div class="row">
             <!--Service 1-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color1">
                         <span class="icon icon-pencil"></span>
@@ -275,7 +278,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 2-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color2">
                         <span class="icon icon-flag"></span>
@@ -292,7 +295,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 3-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color3">
                         <span class="icon icon-lightbulb"></span>
@@ -309,7 +312,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 4-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color4">
                         <span class="icon icon-puzzle"></span>
@@ -326,40 +329,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 5-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="services-content">
-                    <div class="services-icon color3">
-                        <span class="icon icon-megaphone"></span>
-                        <span class="icon icon-megaphone bg-icon"></span>
-                    </div>
-                    <!--End services-icon-->
-                    <div class="services-inner">
-                        <h4>@Resources.Branding</h4>
-                        @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>*@
-                        <p>@Resources.Branding_detail</p>
-                    </div>
-                    <!--End services-inner-->
-                </div>
-                <!--End services-content-->
-            </div>
-            <!--End col-lg-4-->
-            <!--Service 6-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="services-content">
-                    <div class="services-icon color1">
-                        <span class="icon icon-tools-2"></span>
-                        <span class="icon icon-tools-2 bg-icon"></span>
-                    </div>
-                    <!--End services-icon-->
-                    <div class="services-inner">
-                        <h4>@Resources.Support247</h4>
-                        @* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>*@
-                        <p>@Resources.Support_detail</p>
-                    </div>
-                    <!--End services-inner-->
-                </div>
-                <!--End services-content-->
-            </div>
+            
             <!--End col-lg-4-->
         </div>
         <!--End row-->
@@ -373,7 +343,7 @@
 
 =====================================================================-->
 <!--====================================================================
-
+   
 =====================================================================-->
 <!--====================================================================
                         Start Work
