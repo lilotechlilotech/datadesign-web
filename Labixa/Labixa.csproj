@@ -49,8 +49,8 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.3.3.1\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
@@ -1650,59 +1650,6 @@
     <Content Include="Content\ThyNeighbor\js\owl.carousel.min.js" />
     <Content Include="Content\ThyNeighbor\js\wow.min.js" />
     <Content Include="Controllers\4143082[1].png" />
-    <Content Include="Images\uploaded\04cff98e-df11-0100-6b4b-001503122143.jpg" />
-    <Content Include="Images\uploaded\1.jpg" />
-    <Content Include="Images\uploaded\2dayden00_1024x1024.jpg" />
-    <Content Include="Images\uploaded\335280-chan-vay-ren-tigon %281%29.jpg" />
-    <Content Include="Images\uploaded\335280-chan-vay-ren-tigon.jpg" />
-    <Content Include="Images\uploaded\54433439_2248905471839316_8549883781446631424_n.png" />
-    <Content Include="Images\uploaded\647_1553755113_7145c9c6be91a115.jpg" />
-    <Content Include="Images\uploaded\7084645620_1_1_1.jpg" />
-    <Content Include="Images\uploaded\7084645620_2_1_1.jpg" />
-    <Content Include="Images\uploaded\84_1553755111_8685c9c6be746f03.jpg" />
-    <Content Include="Images\uploaded\ao-somi-chu-den-1_grande.jpg" />
-    <Content Include="Images\uploaded\ao-somi-co-duc-trang-1_grande.jpg" />
-    <Content Include="Images\uploaded\ao-somi-co-duc-trang-2_grande.jpg" />
-    <Content Include="Images\uploaded\ao-somi-co-mem-xanh-den-1_grande.jpg" />
-    <Content Include="Images\uploaded\ao-somi-co-mem-xanh-den-2_grande.jpg" />
-    <Content Include="Images\uploaded\ao-somi-lua-gan-vang-1_1024x1024.jpg" />
-    <Content Include="Images\uploaded\ao-thun-bonjour-1_grande.jpg" />
-    <Content Include="Images\uploaded\ao-thun-bonjour-2_grande.jpg" />
-    <Content Include="Images\uploaded\Banner\slider-2.jpg" />
-    <Content Include="Images\uploaded\Banner\slider-4.jpg" />
-    <Content Include="Images\uploaded\Banner\slider-6.jpg" />
-    <Content Include="Images\uploaded\bc_thun_den_1_1024x1024.jpg" />
-    <Content Include="Images\uploaded\Brand\1.png" />
-    <Content Include="Images\uploaded\Brand\2.png" />
-    <Content Include="Images\uploaded\Brand\3.png" />
-    <Content Include="Images\uploaded\Brand\4.png" />
-    <Content Include="Images\uploaded\croptop-nut-trang-1_1024x1024.jpg" />
-    <Content Include="Images\uploaded\croptop-nut-trang-2_1024x1024.jpg" />
-    <Content Include="Images\uploaded\dam-hoa-xuan-1_grande.jpg" />
-    <Content Include="Images\uploaded\dam-hoa-xuan-2_grande.jpg" />
-    <Content Include="Images\uploaded\dam-somi-phoi-soc-xanh-den-1_1024x1024.jpg" />
-    <Content Include="Images\uploaded\dam-somi-phoi-soc-xanh-den-2_1024x1024.jpg" />
-    <Content Include="Images\uploaded\dam-vuon-hong-1_grande.jpg" />
-    <Content Include="Images\uploaded\dam-vuon-hong-2_grande.jpg" />
-    <Content Include="Images\uploaded\do-trinh-hoai-nam-3-1554177037_680x0.jpg" />
-    <Content Include="Images\uploaded\elle-viet-nam-bi-quyet-mac-dep-50.jpg" />
-    <Content Include="Images\uploaded\flag\united-states.png" />
-    <Content Include="Images\uploaded\flag\vietnam.png" />
-    <Content Include="Images\uploaded\giay-cao-got.jpg" />
-    <Content Include="Images\uploaded\giay-nu-2.jpg" />
-    <Content Include="Images\uploaded\giay-nu.jpg" />
-    <Content Include="Images\uploaded\img.jpg" />
-    <Content Include="Images\uploaded\RC_size_chart.png" />
-    <Content Include="Images\uploaded\satin_do_1_1024x1024.jpg" />
-    <Content Include="Images\uploaded\satin_nau_1024x1024.jpg" />
-    <Content Include="Images\uploaded\tin-tuc-2.jpg" />
-    <Content Include="Images\uploaded\tin-tuc-3.jpg" />
-    <Content Include="Images\uploaded\tin-tuc-4.jpg" />
-    <Content Include="Images\uploaded\tintuc5..jpg" />
-    <Content Include="Images\uploaded\vay-but-chi-caro-xanh-2_1024x1024.jpg" />
-    <Content Include="Images\uploaded\vay-ke-zara-1-Custom1-300x450.jpg" />
-    <Content Include="Images\uploaded\vay-ke-zara-2-Custom-300x450.jpg" />
-    <Content Include="Images\uploaded\vay-ke-zara-4-Custom-300x411.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1751,6 +1698,7 @@
     <Content Include="Content\datadesign-product\vendors\flat-icon\Flaticon.woff2" />
     <Content Include="Content\datadesign-product\vendors\flat-icon\Flaticond41d.eot" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

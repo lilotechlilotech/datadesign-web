@@ -12,7 +12,7 @@ namespace Labixa.Controllers
     {
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            string cultureName = null;
+            string cultureName = "en";
             // Validate culture name
             HttpCookie cultureCookie = Request.Cookies["_culture"];
 
@@ -27,6 +27,7 @@ namespace Labixa.Controllers
                 HttpCookie cookie = new HttpCookie("_culture", cultureName);
                 Response.SetCookie(cookie);
             }
+            cultureName = "en";
             // Validate culture name
             cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
             //cultureName = "vi";
