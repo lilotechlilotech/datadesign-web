@@ -357,4 +357,58 @@
   <data name="Read_more" xml:space="preserve">
     <value>READ MORE`</value>
   </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Branding</value>
+  </data>
+  <data name="Branding_detail" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</value>
+  </data>
+  <data name="Clean_Code" xml:space="preserve">
+    <value>Freely integrating 3D digital processes</value>
+  </data>
+  <data name="Clean_Code_detail" xml:space="preserve">
+    <value>Using intelligent 3D digital tools to increase personal power and making digital processes to connect to databases to increase team power becomes indispensable for future businesses. We will combine 3D digital processes and offer creative enterprise solutions using IoT technology and intelligent devices and Microsoft cloud environments.</value>
+  </data>
+  <data name="Creative_Design" xml:space="preserve">
+    <value>Display 3D data by linking reality and virtual reality.</value>
+  </data>
+  <data name="Creative_Design_detail" xml:space="preserve">
+    <value>The development of computer graphics and CPU / GPU technology makes it easy to map 3D virtual data in the real world. In a tremendous visual environment, we invented analogue work in a very place and pushed for significant performance improvements and employee motivation reforms in place. We offer a 3D visualization system that connects "reality" and "virtual".</value>
+  </data>
+  <data name="DIGITAL_TRANSFORMATION" xml:space="preserve">
+    <value>DIGITAL TRANSFORMATION</value>
+  </data>
+  <data name="Our_Services" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Our_Services_Detail" xml:space="preserve">
+    <value>Our service detail</value>
+  </data>
+  <data name="Slide_description" xml:space="preserve">
+    <value>Data Design is a 3D process coordinator that intelligently designs digital virtual space. With advanced 3D technology</value>
+  </data>
+  <data name="Support247" xml:space="preserve">
+    <value>24/7 Support</value>
+  </data>
+  <data name="Support_detail" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="User_Experience" xml:space="preserve">
+    <value>Create knowledge about 3D production from digital processes.</value>
+  </data>
+  <data name="User_Experience_detail" xml:space="preserve">
+    <value>In order to promote high value-added production in Japan, it is important to use machining centers, robots, digital measuring instruments, optimization of laser guide applications and more. Working in the production site and over the past years, the production of auxiliary (3D layer model) and IoT / utilization of large data, etc. are also important themes.</value>
+  </data>
+  <data name="User_Interface" xml:space="preserve">
+    <value>Create a virtual space from scanning / 3D models</value>
+  </data>
+  <data name="User_Interface_detail" xml:space="preserve">
+    <value>In order to offer products that are attractive to the market at the right time, it is important to see / share ideas "effectively in the shortest time and create" 3D content "that can be used in the marketing process. By incorporating the designer's analog feel with the latest digital technology, we propose to create an innovative design process that has never been seen before. Oregon</value>
+  </data>
+  <data name="What_Can_We_Do" xml:space="preserve">
+    <value>What Can We Do</value>
+  </data>
+  <data name="scroll_down" xml:space="preserve">
+    <value>SCROLL DOWN</value>
+  </data>
 </root>

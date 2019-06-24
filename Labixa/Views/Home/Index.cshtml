@@ -2,8 +2,14 @@
 @{
     var blog1 = (Outsourcing.Data.Models.Blog)ViewData["blog1"];
     var blog2 = (Outsourcing.Data.Models.Blog)ViewData["blog2"];
+    var category = (IEnumerable<Outsourcing.Data.Models.ProductCategory>)ViewData["category"];
     HttpCookie cookie = Request.Cookies["_culture"];
 }
+<style>
+    .services-content {
+        min-height:318px;
+    }
+</style>
 <!--====================================================================
                          Start Home
  =====================================================================-->
@@ -13,11 +19,9 @@
         <div class="row">
             <div class="col-sm-8 sm-offset-2 mx-auto">
                 <div class="banner-content text-center">
-                    <h1>DIGITAL TRANSFORMATION</h1>
+                    <h1>@Resources.DIGITAL_TRANSFORMATION</h1>
                     <p>
-                        Data Design is a 3D process coordinator
-                        that intelligently designs digital virtual space.
-                        With advanced 3D technology
+                        @Resources.Slide_description
                     </p>
                 </div>
                 <!--End banner-content-->
@@ -26,7 +30,7 @@
         </div>
         <!--End row-->
         <div class="drop-down">
-            <a href="#introduction"> Scroll Down</a>
+            <a href="#introduction"> @Resources.scroll_down</a>
             <span class="drop-line"></span>
         </div>
         <!--End drop-down-->
@@ -56,7 +60,7 @@
 
                 <div class="introduction-content">
                     <div class="introduction-icon color2">
-                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3dgatoway_color.png" /></span>
+                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3dgatoway_color.png" alt="Data Design Viet Nam" title="Data Design Viet Nam" /></span>
                         <span class="icon icon-linegraph bg-icon"></span>
                     </div>
                     <!--End introduction-icon-->
@@ -71,7 +75,7 @@
                 <!--End introduction-content-->
                 <div class="introduction-content">
                     <div class="introduction-icon color3">
-                        <span class="icon "><img src="https://www.datadesign.co.th/images/icon/3dmanufact_color.png" /></span>
+                        <span class="icon "><img src="https://www.datadesign.co.th/images/icon/3dmanufact_color.png" alt="Data Design Viet Nam" title="Data Design Viet Nam"/></span>
                         <span class="icon icon-globe bg-icon"></span>
                     </div>
                     <!--End introduction-icon-->
@@ -86,7 +90,7 @@
                 <!--End introduction-content-->
                 <div class="introduction-content">
                     <div class="introduction-icon color4">
-                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3drealistic_color.png" /></span>
+                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3drealistic_color.png" alt="Data Design Viet Nam" title="Data Design Viet Nam" /></span>
                         <span class="icon icon-circle-compass bg-icon"></span>
                     </div>
                     <!--End introduction-icon-->
@@ -101,7 +105,7 @@
                 <!--End introduction-content-->
                 <div class="introduction-content">
                     <div class="introduction-icon color4">
-                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3dprocess_color.png" /></span>
+                        <span class="icon"><img src="https://www.datadesign.co.th/images/icon/3dprocess_color.png" alt="Data Design Viet Nam" title="Data Design Viet Nam" /></span>
                         <span class="icon icon-circle-compass bg-icon"></span>
                     </div>
                     <!--End introduction-icon-->
@@ -159,19 +163,19 @@
                 <!--image 1-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="@blog1.BlogImage_Default" alt="">
+                    <img src="@blog1.BlogImage_Default" alt="Data Design Viet Nam" title="Data Design Viet Nam">
                 </div>
                 <!--End about-img-->
                 <!--image 3-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="@blog1.BlogImage_Option" alt="">
+                    <img src="@blog1.BlogImage_Option" alt="Data Design Viet Nam" title="Data Design Viet Nam">
                 </div>
                 <!--End about-img-->
                 <!--image 2-->
                 <div class="about-img">
                     <div class="overlay"></div>
-                    <img src="@blog1.BlogImage_Square" />
+                    <img src="@blog1.BlogImage_Square" alt="Data Design Viet Nam" title="Data Design Viet Nam"/>
                 </div>
                 <!--End about-img-->
 
@@ -194,11 +198,9 @@
             <div class="col-lg-6">
                 <div class="skills-video">
                     <div class="overlay">
-                        <img  src="@blog2.BlogImage_Default" />
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3vQtiW5_ISg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <a class="popup-video btn-play" href="@blog2.BlogImage_Square">
-                        <i class="fa fa-play"></i>
-                    </a>
+
                 </div>
                 <!--End skills-video-->
             </div>
@@ -248,9 +250,9 @@
         <div class="row">
             <div class="col-lg-8 lg-offset-2 mx-auto">
                 <div class="section-title text-center">
-                    <h2>Our Services</h2>
-                    <h3>What Can We Do</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit, ultrices turpis eget.maximus ante. Orci varius natoque penatibus et magnis dis parturient montes.</p>
+                    <h2>@Resources.Our_Services</h2>
+                    <h3>@Resources.What_Can_We_Do</h3>
+                    <p>@Resources.Our_Services_Detail</p>
                 </div>
                 <!--End section-title-->
             </div>
@@ -259,7 +261,7 @@
         <!--End row-->
         <div class="row">
             <!--Service 1-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color1">
                         <span class="icon icon-pencil"></span>
@@ -267,8 +269,8 @@
                     </div>
                     <!--End services-icon-->
                     <div class="services-inner">
-                        <h4>User Interface</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
+                        <h4>@Resources.User_Interface</h4>
+                        <p>@Resources.User_Interface_detail</p>
                     </div>
                     <!--End services-inner-->
                 </div>
@@ -276,7 +278,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 2-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color2">
                         <span class="icon icon-flag"></span>
@@ -284,8 +286,8 @@
                     </div>
                     <!--End services-icon-->
                     <div class="services-inner">
-                        <h4>User Experience</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
+                        <h4>@Resources.User_Experience</h4>
+                        <p>@Resources.User_Experience_detail</p>
                     </div>
                     <!--End services-inner-->
                 </div>
@@ -293,7 +295,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 3-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color3">
                         <span class="icon icon-lightbulb"></span>
@@ -301,8 +303,8 @@
                     </div>
                     <!--End services-icon-->
                     <div class="services-inner">
-                        <h4>Creative Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
+                        <h4>@Resources.Creative_Design</h4>
+                        <p>@Resources.Creative_Design_detail</p>
                     </div>
                     <!--End services-inner-->
                 </div>
@@ -310,7 +312,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 4-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="services-content">
                     <div class="services-icon color4">
                         <span class="icon icon-puzzle"></span>
@@ -318,8 +320,8 @@
                     </div>
                     <!--End services-icon-->
                     <div class="services-inner">
-                        <h4>Clean Code</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
+                        <h4>@Resources.Clean_Code</h4>
+                        <p>@Resources.Clean_Code_detail</p>
                     </div>
                     <!--End services-inner-->
                 </div>
@@ -327,38 +329,7 @@
             </div>
             <!--End col-lg-4-->
             <!--Service 5-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="services-content">
-                    <div class="services-icon color3">
-                        <span class="icon icon-megaphone"></span>
-                        <span class="icon icon-megaphone bg-icon"></span>
-                    </div>
-                    <!--End services-icon-->
-                    <div class="services-inner">
-                        <h4>Branding</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
-                    </div>
-                    <!--End services-inner-->
-                </div>
-                <!--End services-content-->
-            </div>
-            <!--End col-lg-4-->
-            <!--Service 6-->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="services-content">
-                    <div class="services-icon color1">
-                        <span class="icon icon-tools-2"></span>
-                        <span class="icon icon-tools-2 bg-icon"></span>
-                    </div>
-                    <!--End services-icon-->
-                    <div class="services-inner">
-                        <h4>24/7 Support</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ex suscipit</p>
-                    </div>
-                    <!--End services-inner-->
-                </div>
-                <!--End services-content-->
-            </div>
+            
             <!--End col-lg-4-->
         </div>
         <!--End row-->
@@ -372,7 +343,7 @@
 
 =====================================================================-->
 <!--====================================================================
-
+   
 =====================================================================-->
 <!--====================================================================
                         Start Work
@@ -396,9 +367,12 @@
                     <!-- filter List -->
                     <ul id="control" class="list-filter">
                         <li class="active" data-filter="all">All</li>
-                        <li data-filter="1">LineUp</li>
-                        <li data-filter="2">3D Scanning</li>
-                        <li data-filter="3">3D Printing</li>
+                        @foreach (var cate in category)
+                        {
+                            <li data-filter="@cate.Id">@cate.Name</li>
+                        }
+                        @*<li data-filter="2">3D Scanning</li>
+                            <li data-filter="3">3D Printing</li>*@
                     </ul>
                 </div>
                 <!--End work-filter-->
@@ -408,134 +382,50 @@
         <!--end row-->
         <div id="filtr-container" class="row">
             <!--work1-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="https://www.datadesign.co.th/images/products-new/3D-scan/leo_car_in_min-300x200.jpg" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="https://www.datadesign.co.th/images/products-new/3D-scan/leo_car_in_min-300x200.jpg">Artec Leo</a>
-                                </h6>
-                                <p class="category">3D Scanner</p>
-                                <p class="category">for next generation processor</p>
+            @foreach (var product in category)
+            {
+                foreach (var pro in product.Products)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="@pro.ProductCategoryId" data-sort="value">
+                        <div class="work-item popup-img creative-work">
+                            <div class="work-content">
+                                <img src="@pro.ProductPictureMappings.FirstOrDefault().Picture.Url" alt="Data Design Viet Nam" title="Data Design Viet Nam">
+                                <div class="popup-title">
+                                    <div class="work-inner">
+                                        <a href="@pro.Content" class="title" target="_blank">
+                                            <h6 style="color:#E06E31">
+                                                @if (cookie.Value == "vi")
+                                                {
+                                                    @pro.Name
+
+                                                }
+                                                else
+                                                {
+                                                    @pro.NameEng
+                                                }
+                                            </h6>
+                                        </a>
+                                        @if (cookie.Value == "vi")
+                                        {
+                                            <p class="category">@pro.Description</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="category">@pro.DescEng</p>
+                                        }
+                                    </div>
+                                </div>
+                                <!--End popup-title-->
                             </div>
+                            <!--End work-content-->
                         </div>
-                        <!--End popup-title-->
+                        <!--End work-item-->
                     </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
-            <!--work2-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="https://www.datadesign.co.th/images/products-new/3D-modeling/hero_gdx_web-300x212.jpg" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="https://www.datadesign.co.th/images/products-new/3D-modeling/hero_gdx_web-300x212.jpg">Our Awesome Boxes</a>
-                                </h6>
-                                <p class="category">Branding | Design</p>
-                            </div>
-                        </div>
-                        <!--End popup-title-->
-                    </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
-            <!--work3-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="/Content/Datadesign-home/img/work/work3.png" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="img/work/work3.png">Our Awesome Boxes</a>
-                                </h6>
-                                <p class="category">Branding | Design</p>
-                            </div>
-                            <!--End work-inner-->
-                        </div>
-                        <!--End popup-title-->
-                    </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
-            <!--work4-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="/Content/Datadesign-home/img/work/work4.png" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="img/work/work4.png">Our Awesome Boxes</a>
-                                </h6>
-                                <p class="category">Branding | Design</p>
-                            </div>
-                            <!--End work-inner-->
-                        </div>
-                        <!--End popup-title-->
-                    </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
-            <!--work5-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="2" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="/Content/Datadesign-home/img/work/work5.png" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="img/work/work5.png">Our Awesome Boxes</a>
-                                </h6>
-                                <p class="category">Branding | Design</p>
-                            </div>
-                            <!--End work-inner-->
-                        </div>
-                        <!--End popup-title-->
-                    </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
-            <!--work6-->
-            <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3" data-sort="value">
-                <div class="work-item popup-img creative-work">
-                    <div class="work-content">
-                        <img src="/Content/Datadesign-home/img/work/work6.png" alt="">
-                        <div class="popup-title">
-                            <div class="work-inner">
-                                <h6 class="title">
-                                    <a href="img/work/work6.png">Our Awesome Boxes</a>
-                                </h6>
-                                <p class="category">Branding | Design</p>
-                            </div>
-                            <!--End work-inner-->
-                        </div>
-                        <!--End popup-title-->
-                    </div>
-                    <!--End work-content-->
-                </div>
-                <!--End work-item-->
-            </div>
-            <!--End col-lg-4-->
+                }
+            }
+
         </div>
-        <!--End row-->
-    </div>
-    <!--End container-->
+        <!--End container-->
 </section>
 <!--====================================================================
                         End Work

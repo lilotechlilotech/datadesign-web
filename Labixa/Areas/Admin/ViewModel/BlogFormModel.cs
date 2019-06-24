@@ -71,6 +71,8 @@ namespace Labixa.Areas.Admin.ViewModel
 
         [DisplayName(@"Danh mục")]
         public IEnumerable<SelectListItem> ListCategory { get; set; }
+        public string BlogImage_Option { get; set; }
+        public string BlogImage_Square { get; set; }
     }
     public class BlogValidator : AbstractValidator<BlogFormModel>
     {

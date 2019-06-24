@@ -378,6 +378,132 @@ namespace Labixa.App_Data
                 return ResourceManager.GetString("Read_more", resourceCulture);
             }
         }
+        public static string DIGITAL_TRANSFORMATION
+        {
+            get
+            {
+                return ResourceManager.GetString("DIGITAL_TRANSFORMATION", resourceCulture);
+            }
+        }
+        public static string Slide_description
+        {
+            get
+            {
+                return ResourceManager.GetString("Slide_description", resourceCulture);
+            }
+        }
+        public static string Branding
+        {
+            get
+            {
+                return ResourceManager.GetString("Branding", resourceCulture);
+            }
+        }
+        public static string Branding_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Branding_detail", resourceCulture);
+            }
+        }
+        public static string Support247
+        {
+            get
+            {
+                return ResourceManager.GetString("Support247", resourceCulture);
+            }
+        }
+        public static string Support_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Support_detail", resourceCulture);
+            }
+        }
+        public static string Our_Services
+        {
+            get
+            {
+                return ResourceManager.GetString("Our_Services", resourceCulture);
+            }
+        }
+        public static string What_Can_We_Do
+        {
+            get
+            {
+                return ResourceManager.GetString("What_Can_We_Do", resourceCulture);
+            }
+        }
+        public static string Our_Services_Detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Our_Services_Detail", resourceCulture);
+            }
+        }
+        public static string User_Interface
+        {
+            get
+            {
+                return ResourceManager.GetString("User_Interface", resourceCulture);
+            }
+        }
+        public static string User_Interface_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("User_Interface_detail", resourceCulture);
+            }
+        }
+        public static string User_Experience
+        {
+            get
+            {
+                return ResourceManager.GetString("User_Experience", resourceCulture);
+            }
+        }
+        public static string User_Experience_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("User_Experience_detail", resourceCulture);
+            }
+        }
+        public static string Creative_Design
+        {
+            get
+            {
+                return ResourceManager.GetString("Creative_Design", resourceCulture);
+            }
+        }
+        public static string Creative_Design_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Creative_Design_detail", resourceCulture);
+            }
+        }
+        public static string Clean_Code
+        {
+            get
+            {
+                return ResourceManager.GetString("Clean_Code", resourceCulture);
+            }
+        }
+        public static string Clean_Code_detail
+        {
+            get
+            {
+                return ResourceManager.GetString("Clean_Code_detail", resourceCulture);
+            }
+        }
+        public static string scroll_down
+        {
+            get
+            {
+                return ResourceManager.GetString("scroll_down", resourceCulture);
+            }
+        }
         #endregion
 
         #region [website rise]
