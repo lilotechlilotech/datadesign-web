@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* ------------------------------------------------------
 @File: Default Styles
 @Author: Themazine.
@@ -1334,7 +1334,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 .services_area {
   display: block;
   overflow: hidden;
-  padding: 190px 0 150px;
+  padding: 190px 0 0;
   position: relative;
 }
 .services_area:after {
@@ -3445,7 +3445,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 .portfolio_slider .portfolio_slide .carousel-indicators li {
   border-radius: 50%;
-  background-color: white;
+  background-color: palegreen;
   width: 59px;
   height: 59px;
   text-align: center;

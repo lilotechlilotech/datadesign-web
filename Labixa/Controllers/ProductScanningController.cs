@@ -14,5 +14,9 @@ namespace Labixa.Controllers
         {
             return View();
         }
+        public ActionResult Detail(string ProductName)
+        {
+            return View();
+        }
 	}
 }
