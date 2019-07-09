@@ -24,6 +24,7 @@ namespace Labixa
             //routes.MapRoute("onsale", "khuyen-mai", new { controller = "Onsale", action = "Index", slug = UrlParameter.Optional });
             //routes.MapRoute("chinhsachmuahang", "chinh-sach-mua-hang", new { controller = "Home", action = "PolicyBuy", slug = UrlParameter.Optional });
             //routes.MapRoute("chinhsachdoitra", "chinh-sach-doi-tra", new { controller = "Home", action = "PolicyReturn", slug = UrlParameter.Optional });
+            routes.MapRoute("3DScanning", "artec3D", new { controller = "ProductHome", action = "Index", slug = UrlParameter.Optional });
             routes.MapRoute("commingsoon", "comming-soon", new { controller = "ProductHome", action = "Index", slug = UrlParameter.Optional });
             routes.MapRoute("ProductScanning", "3d-scanning", new { controller = "ProductHome", action = "Index", slug = UrlParameter.Optional });
             routes.MapRoute("ProductPrinting", "3d-printing", new { controller = "ProductHome", action = "Index", slug = UrlParameter.Optional });

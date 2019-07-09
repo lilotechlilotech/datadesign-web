@@ -226,6 +226,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OnSaleController.cs" />
     <Compile Include="Controllers\ProductHomeController.cs" />
+    <Compile Include="Controllers\ProductScanningController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1982,6 +1983,7 @@
     <Content Include="Views\Cart\ConfirmCheckOut.cshtml" />
     <Content Include="Views\Shared\_datadesignlayout.cshtml" />
     <Content Include="Views\Shared\_ProductLayoutDDV.cshtml" />
+    <Content Include="Views\ProductScanning\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
