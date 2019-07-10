@@ -1985,6 +1985,9 @@
     <Content Include="Views\Shared\_datadesignlayout.cshtml" />
     <Content Include="Views\Shared\_ProductLayoutDDV.cshtml" />
     <Content Include="Views\ProductScanning\Index.cshtml" />
+    <Content Include="Views\ProductScanning\_ListBlogHome.cshtml" />
+    <Content Include="Views\ProductScanning\BlogDetail.cshtml" />
+    <Content Include="Views\ProductScanning\ListBlog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

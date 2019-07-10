@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Blog>
+    @using Outsourcing.Core.Common
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <div class="tidings_item">
+                <a href="/artec3D/news/@item.Slug" class="heding">@slitString.TruncateAtWord(item.Title,40) </a>
+              @*  <h6>by <a href="#">Emran Khan</a>,  on April 19</h6>*@
+            <p>@slitString.TruncateAtWord(item.Description, 100) </p>
+                <a href="/artec3D/news/@item.Slug" class="read_more">Read More</a>
+            </div>
+        </div>
+    }
+
+    @*<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+        <div class="tidings_item">
+            <a href="blog-details.html" class="heding">6 Design Trends to Make Great-Looking site </a>
+            <h6>by <a href="#">Emran Khan</a>,  on April 19</h6>
+            <p>In our previous article, we have already discussed the biggest benefits mobile apps can bring to business and a startup,</p>
+            <a href="#" class="read_more">Read More</a>
+        </div>
+    </div>
+    <div class="col-lg-4 wow fadeIn" style="visibility: hidden; animation-name: none;">
+        <div class="tidings_item">
+            <a href="blog-details.html" class="heding">6 Design Trends to Make Great-Looking site </a>
+            <h6>by <a href="#">Emran Khan</a>,  on April 19</h6>
+            <p>In our previous article, we have already discussed the biggest benefits mobile apps can bring to business and a startup,</p>
+            <a href="#" class="read_more">Read More</a>
+        </div>
+    </div>*@
+}

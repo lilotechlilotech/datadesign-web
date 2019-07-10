@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_ProductLayoutDDV.cshtml";
+}
+@model Outsourcing.Data.Models.Blog
+@if (Model != null)
+{
+
+    <!-- Pages Banner Area -->
+    <section class="pages_banner pb_2 pb_b pb_b2" style="padding: 151px 0 60px;">
+        <div class="container">
+            <div class="tittle tittle_2">
+              @*  <h1>Insights</h1>*@
+                <h4>Artec</h4>
+                <h2 style="max-width:100%">@Model.Title</h2>
+                <h6><i class="far fa-calendar-alt"></i>@Model.DateCreated.ToShortDateString()</h6>
+            </div>
+        </div>
+        <figure class="wow zoomIn s_shap_1 animated" style="visibility: visible; animation-name: zoomIn;"><img src="/Content/datadesign-product/images/shap/skye-shap-2.png" alt=""></figure>
+        <figure class="wow zoomIn s_shap_2 animated" style="visibility: visible; animation-name: zoomIn;"><img src="/Content/datadesign-product/images/shap/skye-shap-5.png" alt="" class="shap_img2"></figure>
+    </section>
+    <!-- Pages Banner Area -->
+
+    <!-- Blog Area -->
+    <section class="blog_area">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Left Sidebar -->
+                <div class="col-lg-12 blog_left_sidebar">
+                    <img src="@Model.BlogImage_Default" style="width:100%; height:auto"/>
+                    <!-- Blog Item -->
+                    <div class="blog_details">
+                        <h3>@Model.Description</h3>
+                        @Html.Raw(Model.Content)
+                </div>
+                <!-- Blog Left Sidebar -->
+
+            </div>
+        </div>
+    </section>
+    <!-- Blog Area -->
+
+
+}

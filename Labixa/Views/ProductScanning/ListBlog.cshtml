@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ListBlog";
+    Layout = "~/Views/Shared/_ProductLayoutDDV.cshtml";
+}
+@model IEnumerable<Outsourcing.Data.Models.Blog>
+@using Outsourcing.Core.Common
+<!-- Pages Banner Area -->
+<section class=" pb_2 pb_b">
+    <div class="container">
+        <div class="tittle tittle_2">
+            <h4>News</h4>
+        </div>
+    </div>
+</section>
+<!-- Pages Banner Area -->
+<!-- Blog Area -->
+<section class="blog_area">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Left Sidebar -->
+            <div class="col-lg-12 blog_left_sidebar">
+
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <!-- Blog Item -->
+                        <div class="blog_item">
+                            <a style="padding:0;" href="/artec3D/news/@item.Slug" class="blog_img"><img src="@item.BlogImage_Default" alt=""></a>
+                            <ul style="padding:0;">
+                                <li><i class="far fa-calendar-alt"></i>@item.DateCreated.ToShortDateString() </li>
+                            </ul>
+                            <a style="padding:0;" href="/artec3D/news/@item.Slug" class="heding">@slitString.TruncateAtWord(item.Title, 100)</a>
+                            <p>@slitString.TruncateAtWord(item.Description, 500)</p>
+                            <a href="/artec3D/news/@item.Slug" class="theme_btn">Explore More</a>
+                        </div>
+                    }
+
+                }
+            </div>
+            <!-- Blog Left Sidebar -->
+            <!-- Blog Right Sidebar -->
+        </div>
+    </div>
+</section>
+<!-- Blog Area -->
+<!-- Tidings Blog Area -->
+<!-- Tidings Blog Area -->
